@@ -36,6 +36,7 @@ class character():
         self.name = name
         self.position = 1
         self.in_jail = False
+        self.in_jail_round = 0
         self.salary = 0
         self.taxes = 0
         self.fines = 0
@@ -45,7 +46,7 @@ class character():
         step1 = functions.drawDice()
         step2 = functions.drawDice()
         # If in jail, don't move
-        if self.in_jail & step1==step2:
+        if self.in_jail & step1==step2: #in jail and double throw
             self.releaseFromJail(step1+step2)
         else:
             self.position += step1+step2
@@ -67,6 +68,8 @@ class character():
                 print("You've got Free Parking")
             case "Go to Jail":
                 self.go_to_jail()
+            #7 kinds of square
+
 
     def coin_change(self,coin):
         self.coins += coin
@@ -102,7 +105,6 @@ class character():
                         return
                     case _:
                         "Invalid input, please try again"
-
 
     def buyProperty(self):
         prop = inst.read_to_list("prop.txt")
@@ -143,17 +145,27 @@ class character():
     def getName(self):
         return self.name
 
+    def getPosition(self):
+        return self.position
+
+    def getOwnedProperties(self):
+        return self.property
+
+    def getStatus(self):
+        return self.in_jail, self.in_jail_round #要改
+
     def go_to_jail(self):
         key = list(propertiesdict.keys())
         print(key.index("Jail"))
         self.position = key.index("Jail")+1 #find jail position
         self.in_jail = True
+        # when in jail, round ++
 
     def releaseFromJail(self,steps):
         self.in_jail = False
         self.position += steps
 
-p1 = character("Tom")
+"""p1 = character("Tom")
 price = p1.getPropertyPrice(3)
 proper = p1.getPropertyName(3)
-print(f"{p1.getName()} will buy {proper} for {price}")
+print(f"{p1.getName()} will buy {proper} for {price}")"""

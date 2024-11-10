@@ -74,7 +74,7 @@ def print_player_names(player_names):
 def draw():
     return (random.randint(1,6),random.randint(1,6))
 
-def read_to_list(path):
+def read_to_list(path): #input text file, designer 要改東西就入去改
     list = []
     try:
         with open(path, 'r') as file:
@@ -94,10 +94,6 @@ def read_to_list(path):
         print(f"Error {e}")
 
     return list
-
-
-
-
 
 def input_number_within_range(min,max):
     while True:

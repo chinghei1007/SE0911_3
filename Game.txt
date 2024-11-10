@@ -1,0 +1,15 @@
+round x
+
+all properties [owned, name] (price, rent 就會在 chracter.character 先會 call)
+
+Player x
+draw (不知道需不需要給延遲，或者press enter to draw)
+?show dice number
+
+--> e.g. go position 4
+Prompt ("Would you like to Buy (B) or Pass (P))
+Prompt (do you want to pay rent or purchase the {propterty name}
+
+如何固定size
+cmd shown 40*60 columns
+\n\n\n or os.cls

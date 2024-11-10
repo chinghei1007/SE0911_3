@@ -8,9 +8,9 @@ rounds = 0
 while True:
     playerCount = get_number_of_players()
     #output: set to n players
-    playerNames = get_player_names(playerCount)
-    playerNamesInGame = playerNames.copy()
-    characters = [cha.character(name) for name in playerNames]
+    playerNames = get_player_names(playerCount) #pN = list, leaderBoard
+    playerNamesInGame = playerNames.copy() #retire, foul
+    characters = [cha.character(name) for name in playerNames] #character class
     print("You now have players as ")
     for i in range(len(characters)):
         print(f"Player {i}: {characters[i].getName()}")
@@ -24,5 +24,6 @@ while True:
         print(f"\n\nRound {rounds}")
         print("\n\n")
         o.printProperty("property.txt")
+        round =+ 1
 
 

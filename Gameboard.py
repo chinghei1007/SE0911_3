@@ -1,12 +1,12 @@
 import instructions as inst
 class GameBoard:
     def __init__(self):
-        self.sqaures = inst.read_to_list("prop.txt")
+        self.sqaures = inst.read_to_list("prop.txt") #[{name}{price}{rent}]
 
 
     def setup_board(self):
         for key in range(len(self.sqaures)):
-            self.sqaures[key]["owned"] = -1 #no one owned any sqaures
+            self.sqaures[key]["owned"] = -1 #no one owned any sqaures, if owned, change to corresponding
             #sqaures : [name] [price] [rent] [owned]
         """for index, item in enumerate(self.sqaures):
             print(f"Item {index+1}: ")
@@ -22,9 +22,9 @@ class GameBoard:
             if propertyName in item['name'] and item['owned'] < 0: return False
         print("IsOwned: property Not Found")
 
-    def outputOwnedBy(self, position, playerNames):
+    def outputOwnedBy(self, position, playerNames): #playerNames, Game
         position -= 1
-        propName = self.sqaures[position]['name']
+        propName = self.sqaures[position]['name'] #gameboard
         ownerID = self.sqaures[position]['owned']
         ownerName = ''
         if ownerID > 0:
@@ -33,7 +33,7 @@ class GameBoard:
             ownerName = 'None'
         print(f"Owned by {ownerName}")
 
-    def printProperty(self,path):
+    def printProperty(self,path): #test function
         with open(path, 'r') as file:
             lines = file.readlines()
 
