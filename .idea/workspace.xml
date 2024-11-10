@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ddb709a-b977-4daf-a7c2-66f1548c07f7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="0ddb709a-b977-4daf-a7c2-66f1548c07f7" name="Changes" comment="Documentation added 1110 1736">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gameboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/Gameboard.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chracter.py" beforeDir="false" afterPath="$PROJECT_DIR$/chracter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/instructions.py" beforeDir="false" afterPath="$PROJECT_DIR$/instructions.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +16,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="8be53a09-468f-4503-b4e3-8464a5cbeebb" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -52,6 +52,19 @@
       <option name="presentableId" value="Default" />
       <updated>1731146977241</updated>
     </task>
+    <task id="LOCAL-00001" summary="Documentation added 1110 1736">
+      <option name="closed" value="true" />
+      <created>1731231428907</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1731231428907</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Documentation added 1110 1736" />
+    <option name="LAST_COMMIT_MESSAGE" value="Documentation added 1110 1736" />
   </component>
 </project>

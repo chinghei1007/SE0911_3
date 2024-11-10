@@ -50,6 +50,8 @@ class character():
             self.releaseFromJail(step1+step2)
         else:
             self.position += step1+step2
+            #self.special_square(self.getPropertyName(self.position))
+            #Determine property type
             if self.position > 20:
                 self.position -=20
                 self.special_square("Go") #+1500 coins
@@ -62,11 +64,11 @@ class character():
                 self.coin_change(1500)
             case "Chance": #coin +200 to -300
                 self.coin_change(random.randint(-30, 20) * 10)
-            case "Income Tax":
+            case "Tax":
                 self.coin_change(-int(self.coins * 0.1))
             case "Free Parking":
                 print("You've got Free Parking")
-            case "Go to Jail":
+            case "GoToJail":
                 self.go_to_jail()
             #7 kinds of square
 
