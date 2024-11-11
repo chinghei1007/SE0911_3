@@ -1,9 +1,7 @@
 import functions
 import instructions as inst
-from Gameboard import GameBoard as gb
-import Gameboard as gb
+import gameboard as gb
 import random
-import Game as G
 
 player_count = 0
 propertiesdict = {
@@ -31,7 +29,7 @@ propertiesdict = {
 }
 
 defaultpropertycost = (-1,800,700,-1,600,-1,400,500,-1,400,-1,700,-1,400,500,-1,400,400,-1,600)
-class character():
+class Character():
     def __init__(self, name):
         self.coins = 1500
         self.property = []
@@ -44,11 +42,20 @@ class character():
         self.fines = 0
         self.retire = False
 
+    def __str__(self):
+        return self.name
+
     def draw_then_position_change(self):
         step1 = functions.drawDice()
         step2 = functions.drawDice()
+        # Check In jail rounds
+        if self.in_jail_round == 3:
+            self.go_retire()
         # If in jail, don't move
-        if self.in_jail & step1==step2: #in jail and double throw
+        if self.in_jail:
+            self.in_jail_round += 1
+        # If in jail and double dice, move
+        if self.in_jail & step1==step2:
             self.releaseFromJail(step1+step2)
         else:
             #change position, then determine propter type, pass to special square
@@ -84,6 +91,7 @@ class character():
             self.property = []
 
     def buyOrPayRent(self,sqare):
+        import game as G
         propertyname = G.completemap[self.position]['name']
 
         if (G.completemap[self.position]['owned'] == -1):
@@ -178,7 +186,14 @@ class character():
 
     def releaseFromJail(self,steps):
         self.in_jail = False
+        self.in_jail_round = 0
         self.position += steps
+
+    def IsRetired(self):
+        return self.retire
+
+    def go_retire(self):
+        self.retire = True
 
 """p1 = character("Tom")
 price = p1.getPropertyPrice(3)
