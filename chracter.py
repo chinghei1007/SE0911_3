@@ -1,5 +1,7 @@
 import functions
 import instructions as inst
+from Gameboard import GameBoard as gb
+import Gameboard as gb
 import random
 import Game as G
 
@@ -49,9 +51,11 @@ class character():
         if self.in_jail & step1==step2: #in jail and double throw
             self.releaseFromJail(step1+step2)
         else:
+            #change position, then determine propter type, pass to special square
             self.position += step1+step2
+            self.special_square(self.getPropertyType(self.position))
             #self.special_square(self.getPropertyName(self.position))
-            #Determine property type
+
             if self.position > 20:
                 self.position -=20
                 self.special_square("Go") #+1500 coins
@@ -143,6 +147,15 @@ class character():
     def getPropertyName(self,position):
         list_properties = list(propertiesdict.keys())
         return list_properties[position - 1]
+
+    def getPropertyType(self,position):
+        list = gb.getProptertyList()
+        #result = ["Property" if item["rent"] > 0 else item["name"] for item in list]
+        item = list[position-1]
+        if item["rent"] > 0:
+            return "Property"
+        else:
+            return item["name"]
 
     def getName(self):
         return self.name

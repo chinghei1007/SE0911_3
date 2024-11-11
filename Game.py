@@ -9,7 +9,7 @@ while True:
     playerCount = get_number_of_players()
     #output: set to n players
     playerNames = get_player_names(playerCount) #pN = list, leaderBoard
-    playerNamesInGame = playerNames.copy() #retire, foul
+    playerNamesInGame = playerNames #retire, foul
     characters = [cha.character(name) for name in playerNames] #character class
     print("You now have players as ")
     for i in range(len(characters)):

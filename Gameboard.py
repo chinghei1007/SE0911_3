@@ -34,6 +34,9 @@ class GameBoard:
             ownerName = 'None'
         print(f"Owned by {ownerName}")
 
+    def getProptertyList(self):
+        return self.sqaures
+
     def printProperty(self,path): #test function
         with open(path, 'r') as file:
             lines = file.readlines()
