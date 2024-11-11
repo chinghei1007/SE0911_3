@@ -1,5 +1,5 @@
-import Gameboard as gb
-import chracter as cha
+import gameboard as gb
+from character import Character
 from instructions import *
 
 #Start
@@ -10,12 +10,12 @@ while True:
     #output: set to n players
     playerNames = get_player_names(playerCount) #pN = list, leaderBoard
     playerNamesInGame = playerNames #retire, foul
-    characters = [cha.character(name) for name in playerNames] #character class
+    characters = [Character(name) for name in playerNames] #character class
     print("You now have players as ")
     for i in range(len(characters)):
         print(f"Player {i}: {characters[i].getName()}")
 
-    o = gb.GameBoard()
+    o = gb.Gameboard()
     completemap = o.setup_board() #returns list of dictionaries with properties information
     print("\n\nThe Game will now start")
     #start

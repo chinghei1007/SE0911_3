@@ -1,5 +1,5 @@
 import instructions as inst
-class GameBoard:
+class Gameboard:
     def __init__(self):
         self.sqaures = inst.read_to_list("prop.txt") #[{name}{price}{rent}]
 
