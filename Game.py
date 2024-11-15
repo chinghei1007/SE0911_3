@@ -1,4 +1,6 @@
 import gameboard as gb
+
+import functions
 from character import Character
 from instructions import *
 
@@ -6,6 +8,15 @@ from instructions import *
 rounds = 0
 
 while True:
+    dev = input("Are you a developer? y/n").strip().lower()
+    if dev == 'y':
+            functions.developerMode()
+    elif dev == 'n':
+        print("okay")
+    else:
+        print("invalid input, please try again")
+        continue
+
     playerCount = get_number_of_players()
     #output: set to n players
     playerNames = get_player_names(playerCount) #pN = list, leaderBoard

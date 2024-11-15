@@ -1,9 +1,11 @@
 import os.path
 from tkinter import Tk, filedialog
+import functions
 import instructions as inst
 class Gameboard:
     def __init__(self):
-        self.sqaures = inst.read_to_list("prop.txt") #[{name}{price}{rent}]
+        self.defaultpath = functions.getDefaultPath()
+        self.sqaures = inst.read_to_list(self.defaultpath) #[{name}{price}{rent}]
 
 
     def setup_board(self):
@@ -39,7 +41,7 @@ class Gameboard:
     def getProptertyList(self):
         return self.sqaures
 
-    def printProperty(self,path): #test function
+    def printPropertyName(self,path): #test function
         with open(path, 'r') as file:
             lines = file.readlines()
 
@@ -50,8 +52,8 @@ class Gameboard:
                 if rent > 0:
                     print(f"{i+1}. {name}")
 
-    def importGameboard(self,path):
-        pass
+    def importGbfromFunc(self,path):
+        self.sqaures = inst.read_to_list(path)
 
     """def exportGameboard(self, listDict):
         while True:
