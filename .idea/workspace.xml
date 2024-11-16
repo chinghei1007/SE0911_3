@@ -5,14 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ddb709a-b977-4daf-a7c2-66f1548c07f7" name="Changes" comment="1111 2053 file names changed, main game.py will now run">
-      <change afterPath="$PROJECT_DIR$/config.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testcharacter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/SE0911_2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SE0911_2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Game.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gameboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/Gameboard.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/character.py" beforeDir="false" afterPath="$PROJECT_DIR$/character.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/config.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +24,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Unit Test" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -44,9 +46,13 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python tests.Python tests for test.MyTestCase.executor": "Run",
+    "Python tests.Python tests for test.TestFunctions.executor": "Run",
+    "Python tests.Python tests for test.TestFunctions.test_get_default_path_creates_file.executor": "Run",
     "Python tests.Python tests for test.TestFunctions.test_get_default_path_exists.executor": "Run",
     "Python tests.Python tests for test.TestFunctions.test_import_gameboard_and_not_set_default.executor": "Run",
     "Python tests.Python tests for test.TestFunctions.test_import_gameboard_and_set_default.executor": "Run",
+    "Python tests.Python tests for test.TestFunctions.test_save_default_path.executor": "Run",
+    "Python tests.Python tests for testcharacter.Test.testPositionChange.executor": "Run",
     "Python tests.Python tests in test.py.executor": "Run",
     "Python.Game.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -54,8 +60,8 @@
     "git-widget-placeholder": "master"
   }
 }]]></component>
-  <component name="RunManager" selected="Python tests.Python tests for test.TestFunctions.test_import_gameboard_and_not_set_default">
-    <configuration name="Python tests for test.MyTestCase" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.Python tests for testcharacter.Test.testPositionChange">
+    <configuration name="Python tests for test.TestFunctions.test_get_default_path_creates_file" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="SE0911_2" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -66,7 +72,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test.MyTestCase&quot;" />
+      <option name="_new_target" value="&quot;test.TestFunctions.test_get_default_path_creates_file&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -100,7 +106,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test.TestFunctions.test_import_gameboard_and_set_default" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test.TestFunctions.test_save_default_path" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="SE0911_2" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -111,11 +117,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test.TestFunctions.test_import_gameboard_and_set_default&quot;" />
+      <option name="_new_target" value="&quot;test.TestFunctions.test_save_default_path&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests in test.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for testcharacter.Test.testPositionChange" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="SE0911_2" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -126,17 +132,17 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/test.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <option name="_new_target" value="&quot;testcharacter.Test.testPositionChange&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for test.TestFunctions.test_import_gameboard_and_not_set_default" />
+        <item itemvalue="Python tests.Python tests for testcharacter.Test.testPositionChange" />
+        <item itemvalue="Python tests.Python tests for test.TestFunctions.test_save_default_path" />
+        <item itemvalue="Python tests.Python tests for test.TestFunctions.test_get_default_path_creates_file" />
         <item itemvalue="Python tests.Python tests for test.TestFunctions.test_get_default_path_exists" />
-        <item itemvalue="Python tests.Python tests for test.TestFunctions.test_import_gameboard_and_set_default" />
-        <item itemvalue="Python tests.Python tests in test.py" />
-        <item itemvalue="Python tests.Python tests for test.MyTestCase" />
+        <item itemvalue="Python tests.Python tests for test.TestFunctions.test_import_gameboard_and_not_set_default" />
       </list>
     </recent_temporary>
   </component>
@@ -208,5 +214,21 @@
     <MESSAGE value="1111 2005 fixed change position logic" />
     <MESSAGE value="1111 2053 file names changed, main game.py will now run" />
     <option name="LAST_COMMIT_MESSAGE" value="1111 2053 file names changed, main game.py will now run" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/functions.py</url>
+          <line>51</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/character.py</url>
+          <line>200</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

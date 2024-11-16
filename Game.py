@@ -8,9 +8,12 @@ from instructions import *
 rounds = 0
 
 while True:
+    o = gb.Gameboard()
+    completemap = o.setup_board() #returns list of dictionaries with properties information
+
     dev = input("Are you a developer? y/n").strip().lower()
     if dev == 'y':
-            functions.developerMode()
+            functions.developerMode(o)
     elif dev == 'n':
         print("okay")
     else:
@@ -26,8 +29,7 @@ while True:
     for i in range(len(characters)):
         print(f"Player {i}: {characters[i].getName()}")
 
-    o = gb.Gameboard()
-    completemap = o.setup_board() #returns list of dictionaries with properties information
+
     print("\n\nThe Game will now start")
     #start
 

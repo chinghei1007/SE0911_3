@@ -52,10 +52,10 @@ class Character():
         if self.in_jail_round == 3:
             self.go_retire()
         # If in jail, don't move
-        if self.in_jail:
+        elif self.in_jail:
             self.in_jail_round += 1
         # If in jail and double dice, move
-        if self.in_jail & step1==step2:
+        elif self.in_jail & step1==step2:
             self.releaseFromJail(step1+step2)
         else:
             #change position, then determine propter type, pass to special square
@@ -157,7 +157,10 @@ class Character():
         return list_properties[position - 1]
 
     def getPropertyType(self,position):
-        list = gb.getProptertyList()
+        gpt = gb.Gameboard()
+        gpt.setup_board()
+        list = gpt.getPropertyList()
+        print(len(list))
         #result = ["Property" if item["rent"] > 0 else item["name"] for item in list]
         item = list[position-1]
         if item["rent"] > 0:
@@ -194,6 +197,29 @@ class Character():
 
     def go_retire(self):
         self.retire = True
+
+    def position_change(self,step1, step2):
+        # Check In jail rounds
+        if self.in_jail_round == 3:
+            self.go_retire()
+        # If in jail, don't move
+        elif self.in_jail:
+            self.in_jail_round += 1
+        # If in jail and double dice, move
+        elif self.in_jail & step1==step2:
+            self.releaseFromJail(step1+step2)
+        else:
+            #change position, then determine propter type, pass to special square
+            self.position += step1+step2
+
+            if self.position > 20:
+                self.position -=20
+
+        return self.coins, self.position
+
+    def switchToJail(self):
+        if self.in_jail == True: return
+        self.in_jail = True
 
 """p1 = character("Tom")
 price = p1.getPropertyPrice(3)

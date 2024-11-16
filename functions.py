@@ -8,7 +8,7 @@ from tkinter import filedialog
 def drawDice():
     return random.randint(1, 6)
 
-def developerMode():
+def developerMode(o):
     while True:
         print("What do you want?")
         print("1. Import gameboard")
@@ -18,7 +18,7 @@ def developerMode():
         choice = input("Enter your choice (1-3): ")
 
         if choice == '1':
-            importGbFunc()
+            importGbFunc(o)
             print("Gameboard imported.")
         elif choice == '2':
             # Export gameboard code here
@@ -28,10 +28,10 @@ def developerMode():
         else:
             print("Invalid choice. Please try again.")
 
-def importGbFunc():
+def importGbFunc(o):
     while True:
         root = tk.Tk()
-        root.withdraw
+        root.withdraw()
 
         path = filedialog.askopenfilename(
             title = "Please select the txt file containing Gameboard",
@@ -46,7 +46,7 @@ def importGbFunc():
             if choice == 'n':
                 print(f"Default path hasn't changed: {getDefaultPath()}")
             from gameboard import Gameboard as gb
-            gb.importGbfromFunc(path)
+            gb.importGbfromFunc(o,path)
 
 
 def getDefaultPath():
@@ -54,14 +54,17 @@ def getDefaultPath():
     file = "config.ini"
 
     if os.path.exists(file):
+
         config.read(file)
         if "DEFAULT" in config and "path" in config["DEFAULT"]:
+            print(config["DEFAULT"]["path"])
             return config["DEFAULT"]["path"]
-    else:
-        config["DEFAULT"] = {"path":"./property.txt"}
-        with open(file, "w") as f:
-            config.write(f)
-            return "./property.txt"
+        else:
+            print("Now will set the default path")
+            config["DEFAULT"] = {"path":"property.txt"}
+            with open(file, "w") as f:
+                config.write(f)
+                return "property.txt"
 
 def saveDefaultPath(path):
     config = configparser.ConfigParser()
@@ -70,3 +73,6 @@ def saveDefaultPath(path):
     with open("config.ini", "w") as f:
         config.write(f)
     print("Default Path set")
+
+def gameUI():
+    pass
