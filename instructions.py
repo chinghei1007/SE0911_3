@@ -11,23 +11,29 @@ def get_number_of_players():
         else: print('Please enter the number of players again.')
 
 def get_player_names(num_players):
-    #collect names
+    # Collect names
     player_names = []
     for i in range(num_players):
-        name = input(f"Enter name of player {i+1}: ")
-        player_names.append(name)
+        while True:
+            name = input(f"Enter name of player {i + 1}: ").strip()
+            if name:  # Check if the name is not empty or just spaces
+                player_names.append(name)
+                break  # Exit the loop if a valid name is entered
+            else:
+                print("Name cannot be empty or just whitespace. Please enter a valid name.")
 
-    #confirm or edit names
+    # Confirm or edit names
     while True:
         print_player_names(player_names)
-        choice = input("Do you want to confirm the names or edit them? (c to confirm, e to edit)").strip().lower()
+        choice = input("Do you want to confirm the names or edit them? (c to confirm, e to edit): ").strip().lower()
         match choice:
             case 'c':
                 return player_names
             case 'e':
-                player_names = change_player_names(player_names);break
-            case _ :
-                print("Invalid input, try again")
+                player_names = change_player_names(player_names)
+                break
+            case _:
+                print("Invalid input, try again.")
 
 def change_player_names(player_names):
     original_names = player_names.copy()

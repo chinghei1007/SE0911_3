@@ -5,15 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ddb709a-b977-4daf-a7c2-66f1548c07f7" name="Changes" comment="1111 2053 file names changed, main game.py will now run">
-      <change afterPath="$PROJECT_DIR$/testcharacter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/SE0911_2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SE0911_2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gameboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/Gameboard.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/character.py" beforeDir="false" afterPath="$PROJECT_DIR$/character.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/config.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instructions.py" beforeDir="false" afterPath="$PROJECT_DIR$/instructions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/property.txt" beforeDir="false" afterPath="$PROJECT_DIR$/property.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,12 +55,14 @@
     "Python tests.Python tests for testcharacter.Test.testPositionChange.executor": "Run",
     "Python tests.Python tests in test.py.executor": "Run",
     "Python.Game.executor": "Run",
+    "Python.game.executor": "Run",
+    "Python.gameboard.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master"
   }
 }]]></component>
-  <component name="RunManager" selected="Python tests.Python tests for testcharacter.Test.testPositionChange">
+  <component name="RunManager">
     <configuration name="Python tests for test.TestFunctions.test_get_default_path_creates_file" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="SE0911_2" />
       <option name="ENV_FILES" value="" />
@@ -225,7 +227,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/character.py</url>
-          <line>200</line>
+          <line>162</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>

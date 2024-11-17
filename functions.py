@@ -57,7 +57,7 @@ def getDefaultPath():
 
         config.read(file)
         if "DEFAULT" in config and "path" in config["DEFAULT"]:
-            print(config["DEFAULT"]["path"])
+            #print(config["DEFAULT"]["path"])
             return config["DEFAULT"]["path"]
         else:
             print("Now will set the default path")

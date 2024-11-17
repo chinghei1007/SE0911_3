@@ -6,6 +6,11 @@ class Gameboard:
     def __init__(self):
         self.defaultpath = functions.getDefaultPath()
         self.sqaures = inst.read_to_list(self.defaultpath) #[{name}{price}{rent}]
+        #self.sqaures = inst.read_to_list("property.txt")
+        if not self.validate_board(self.sqaures):
+            print("Board error, the game will now terminate, please contact gameboard designer or use the default board")
+            raise SystemExit
+
 
 
     def setup_board(self):
@@ -27,19 +32,32 @@ class Gameboard:
             if propertyName in item['name'] and item['owned'] < 0: return False
         print("IsOwned: property Not Found")
 
-    def outputOwnedBy(self, position, playerNames): #playerNames, Game
+    def outputOwnedBy(self, position, player_names):
         position -= 1
-        propName = self.sqaures[position]['name'] #gameboard
-        ownerID = self.sqaures[position]['owned']
-        ownerName = ''
-        if ownerID > 0:
-            ownerName = playerNames[ownerID]
+        prop_name = self.sqaures[position]['name']
+        owner_id = self.sqaures[position]['owned']
+        if owner_id >= 0:
+            return player_names[owner_id]
         else:
-            ownerName = 'None'
-        print(f"Owned by {ownerName}")
+            return "None"
 
     def getProptertyList(self):
         return self.sqaures
+
+    def getPropertyNamewithOwned(self, player_names):
+        path = self.getDefaultPath()
+        with open(path, 'r') as file:
+            lines = file.readlines()
+
+            for i, line in enumerate(lines):
+                name, price, rent = line.strip().split(',')
+                rent = int(rent)
+
+                if rent > 0:
+                    owner_name = self.outputOwnedBy(i + 1, player_names)
+                    print(f"{i + 1}. {name} - Owned by {owner_name}")
+                elif name in ["Go", "Tax", "Chance", "Jail", "Go to Jail"]:
+                    print(f"{i + 1}. {name}")
 
     def printPropertyName(self,path): #test function
         with open(path, 'r') as file:
@@ -128,3 +146,71 @@ class Gameboard:
             print("Please check only ONE go and ONE jail exists")
             return False
         return True
+
+    def validate_board(self, board_data):
+        go_count = 0
+        tax_count = 0
+        jail_count = 0
+        chance_count = 0
+        gotojail_count = 0
+        errors = []
+
+        if len(board_data) != 20:
+            errors.append(f"Error: The board data must have exactly 20 lines, but found {len(board_data)} lines.")
+
+        for i, line in enumerate(board_data, start=1):
+            if len(line) != 3:
+                errors.append(f"Format error: Line {i} must have exactly 3 keys (name, price, rent).")
+                continue
+
+            name = line['name']
+            price = line['price']
+            rent = line['rent']
+
+            if name == 'Go':
+                go_count += 1
+                if price != 0 or rent != 0:
+                    errors.append(
+                        f"Error: Line {i} - Go must have 0 for both price and rent, but got ({price}, {rent}).")
+            elif name == 'Tax':
+                tax_count += 1
+                if price != 0 or rent != 0:
+                    errors.append(
+                        f"Error: Line {i} - Tax must have 0 for both price and rent, but got ({price}, {rent}).")
+            elif name == 'Jail':
+                jail_count += 1
+                if price != 0 or rent != 0:
+                    errors.append(
+                        f"Error: Line {i} - Jail must have 0 for both price and rent, but got ({price}, {rent}).")
+            elif name == 'Chance':
+                chance_count += 1
+                if price != 0 or rent != 0:
+                    errors.append(
+                        f"Error: Line {i} - Chance must have 0 for both price and rent, but got ({price}, {rent}).")
+            elif name == 'Go To Jail':
+                gotojail_count += 1
+                if price != 0 or rent != 0:
+                    errors.append(
+                        f"Error: Line {i} - GoToJail must have 0 for both price and rent, but got ({price}, {rent}).")
+
+        if go_count != 1:
+            errors.append(f"Error: There must be exactly one Go, but found {go_count}.")
+        if tax_count < 1 or tax_count > 3:
+            errors.append(f"Error: There must be between 1 and 3 Tax, but found {tax_count}.")
+        if jail_count != 1:
+            errors.append(f"Error: There must be exactly one Jail, but found {jail_count}.")
+        if chance_count < 1 or chance_count > 3:
+            errors.append(f"Error: There must be between 1 and 3 Chance, but found {chance_count}.")
+        if gotojail_count < 1 or gotojail_count > 3:
+            errors.append(f"Error: There must be between 1 and 3 GoToJail, but found {gotojail_count}.")
+
+        if errors:
+            for error in errors:
+                print(error)
+            raise SystemExit("Board data is not valid.")
+
+        return True
+
+    def getDefaultPath(self):
+        return self.defaultpath
+

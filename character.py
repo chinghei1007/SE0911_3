@@ -45,43 +45,6 @@ class Character():
     def __str__(self):
         return self.name
 
-    def draw_then_position_change(self):
-        step1 = functions.drawDice()
-        step2 = functions.drawDice()
-        # Check In jail rounds
-        if self.in_jail_round == 3:
-            self.go_retire()
-        # If in jail, don't move
-        elif self.in_jail:
-            self.in_jail_round += 1
-        # If in jail and double dice, move
-        elif self.in_jail & step1==step2:
-            self.releaseFromJail(step1+step2)
-        else:
-            #change position, then determine propter type, pass to special square
-            self.position += step1+step2
-            self.special_square(self.getPropertyType(self.position))
-            #self.special_square(self.getPropertyName(self.position))
-
-            if self.position > 20:
-                self.position -=20
-                self.special_square("Go") #+1500 coins
-
-    def special_square(self,sqare):
-        match sqare:
-            case "Property":
-                self.buyOrPayRent(sqare) #prompt user to choose buy or pay
-            case "Go": #coin +1500
-                self.coin_change(1500)
-            case "Chance": #coin +200 to -300
-                self.coin_change(random.randint(-30, 20) * 10)
-            case "Tax":
-                self.coin_change(-int(self.coins * 0.1))
-            case "Free Parking":
-                print("You've got Free Parking")
-            case "GoToJail":
-                self.go_to_jail()
-            #7 kinds of square
 
 
     def coin_change(self,coin):
@@ -90,11 +53,10 @@ class Character():
             self.retire = True
             self.property = []
 
-    def buyOrPayRent(self,sqare):
-        import game as G
-        propertyname = G.completemap[self.position]['name']
+    def buyOrPayRent(self,sqare,position):
+        print("buyOrPayRent has been run")
 
-        if (G.completemap[self.position]['owned'] == -1):
+        if (gb.Gameboard):
             value = input(f"Would you like to Buy (B) or Pass (P) {propertyname}?").lower().strip()
             while (True):
                 match value:
@@ -159,7 +121,7 @@ class Character():
     def getPropertyType(self,position):
         gpt = gb.Gameboard()
         gpt.setup_board()
-        list = gpt.getPropertyList()
+        list = gpt.getProptertyList()
         print(len(list))
         #result = ["Property" if item["rent"] > 0 else item["name"] for item in list]
         item = list[position-1]
