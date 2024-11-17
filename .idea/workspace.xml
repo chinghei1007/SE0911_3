@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="0ddb709a-b977-4daf-a7c2-66f1548c07f7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/character.py" beforeDir="false" afterPath="$PROJECT_DIR$/character.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/gameboard.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,32 +31,35 @@
   &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="2obn7oH8IvVM9CcjNijmpHJTQkf" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python tests.Python tests for test.MyTestCase.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test.TestFunctions.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test.TestFunctions.test_get_default_path_creates_file.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test.TestFunctions.test_get_default_path_exists.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test.TestFunctions.test_import_gameboard_and_not_set_default.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test.TestFunctions.test_import_gameboard_and_set_default.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test.TestFunctions.test_save_default_path.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for testcharacter.Test.testPositionChange.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Game.executor&quot;: &quot;Run&quot;,
-    &quot;Python.game.executor&quot;: &quot;Run&quot;,
-    &quot;Python.gameboard.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Temp/SE0911_3&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;application.passwordSafe&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python tests.Python tests for test.MyTestCase.executor": "Run",
+    "Python tests.Python tests for test.TestFunctions.executor": "Run",
+    "Python tests.Python tests for test.TestFunctions.test_get_default_path_creates_file.executor": "Run",
+    "Python tests.Python tests for test.TestFunctions.test_get_default_path_exists.executor": "Run",
+    "Python tests.Python tests for test.TestFunctions.test_import_gameboard_and_not_set_default.executor": "Run",
+    "Python tests.Python tests for test.TestFunctions.test_import_gameboard_and_set_default.executor": "Run",
+    "Python tests.Python tests for test.TestFunctions.test_save_default_path.executor": "Run",
+    "Python tests.Python tests for testcharacter.Test.testPositionChange.executor": "Run",
+    "Python tests.Python tests in test.py.executor": "Run",
+    "Python.Game.executor": "Run",
+    "Python.game.executor": "Run",
+    "Python.gameboard.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Temp/SE0911_2",
+    "settings.editor.selected.configurable": "application.passwordSafe"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Python tests.Python tests for test.TestFunctions.test_get_default_path_creates_file">
     <configuration name="Python tests for test.TestFunctions.test_get_default_path_creates_file" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="SE0911_2" />
@@ -211,7 +218,23 @@
       <option name="project" value="LOCAL" />
       <updated>1731855237258</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="changed names">
+      <option name="closed" value="true" />
+      <created>1731855557929</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1731855557929</updated>
+    </task>
+    <task id="LOCAL-00009" summary="changed names">
+      <option name="closed" value="true" />
+      <created>1731855578047</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1731855578047</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -220,6 +243,13 @@
         <entry key="MAIN">
           <value>
             <State>
+              <option name="COLUMN_ID_WIDTH">
+                <map>
+                  <entry key="Table.Default.Author.ColumnIdWidth" value="15" />
+                  <entry key="Table.Default.Date.ColumnIdWidth" value="15" />
+                  <entry key="Table.Space.CommitStatus.ColumnIdWidth" value="15" />
+                </map>
+              </option>
               <option name="FILTERS">
                 <map>
                   <entry key="branch">
@@ -238,25 +268,27 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Documentation added 1110 1736" />
     <MESSAGE value="Documentation added 1110 1804" />
     <MESSAGE value="1111 2005 fixed change position logic" />
     <MESSAGE value="1111 2053 file names changed, main game.py will now run" />
     <MESSAGE value="1117 2034 big changes in code organization, including game, character" />
     <MESSAGE value="1117 2249 game logic is basically finished, please test out bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="1117 2249 game logic is basically finished, please test out bugs" />
+    <MESSAGE value="changed names" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed names" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/functions.py</url>
-          <line>51</line>
+          <line>50</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/character.py</url>
-          <line>126</line>
+          <line>119</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>

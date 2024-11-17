@@ -45,16 +45,11 @@ class Character():
     def __str__(self):
         return self.name
 
-
-
     def coin_change(self,coin):
         self.coins += coin
         if self.coins < 0:
             self.retire = True
             self.property = []
-
-
-
 
     def getPropertyRent(self,position):
         gpt = gb.Gameboard()
@@ -71,7 +66,6 @@ class Character():
         property_price = list[position - 1]["price"]
         print("getPropertyPrice has run")
         return property_price
-
 
     def getPropertyName(self,position):
         gpt = gb.Gameboard()
@@ -104,7 +98,6 @@ class Character():
 
     def getStatus(self):
         return self.in_jail, self.in_jail_round #要改
-
 
     def go_to_jail(self):
         key = list(propertiesdict.keys())

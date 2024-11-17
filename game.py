@@ -150,8 +150,6 @@ def print_player_positions_with_balance(user):
 def getPlayerID(name):
     return player_names.index(name)
 
-
-
 # Start
 rounds = 0
 

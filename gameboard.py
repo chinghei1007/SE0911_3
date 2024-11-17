@@ -11,8 +11,6 @@ class Gameboard:
             print("Board error, the game will now terminate, please contact gameboard designer or use the default board")
             raise SystemExit
 
-
-
     def setup_board(self):
         for key in range(len(self.sqaures)):
             self.sqaures[key]["owned"] = -1 #no one owned any sqaures, if owned, change to corresponding

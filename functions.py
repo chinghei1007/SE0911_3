@@ -48,7 +48,6 @@ def importGbFunc(o):
             from gameboard import Gameboard as gb
             gb.importGbfromFunc(o,path)
 
-
 def getDefaultPath():
     config = configparser.ConfigParser()
     file = "config.ini"
@@ -73,6 +72,3 @@ def saveDefaultPath(path):
     with open("config.ini", "w") as f:
         config.write(f)
     print("Default Path set")
-
-def gameUI():
-    pass
