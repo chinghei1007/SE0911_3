@@ -53,76 +53,39 @@ class Character():
             self.retire = True
             self.property = []
 
-    def buyOrPayRent(self,sqare,position):
-        print("buyOrPayRent has been run")
 
-        if (gb.Gameboard):
-            value = input(f"Would you like to Buy (B) or Pass (P) {propertyname}?").lower().strip()
-            while (True):
-                match value:
-                    case "b":
-                        self.buyPropertyNoRent()
-                        return
-                    case "p":
-                        return
-                    case _:
-                        "Invalid input, please try again"
 
-        else:
-            value = input(f"Would you like to Buy (B) or pay Rent(R) to {sqare}?").lower().strip()
-            while(True):
 
-                match value:
-                    case "b":
-                        self.buyProperty()
-                        return
-                    case "r":
-                        self.payRent()
-                        return
-                    case _:
-                        "Invalid input, please try again"
-
-    def buyProperty(self):
-        prop = inst.read_to_list("prop.txt")
-        propertyPrice = prop[self.position-1]['price']
-        if self.coins >= propertyPrice:
-            self.property.append(prop[self.position-1]['name'])
-            self.coins -= propertyPrice
-        else:
-            print("Insufficient balance, you are now forced to pay rent")
-            self.payRent()
-
-    def buyPropertyNoRent(self):
-        prop = inst.read_to_list("prop.txt")
-        propertyPrice = prop[self.position-1]['price']
-        if self.coins >= propertyPrice:
-            self.property.append(prop[self.position-1]['name'])
-            self.coins -= propertyPrice
-        else:
-            print("Insufficient balance, no action done.")
-
-    def payRent(self):
-        prop = inst.read_to_list("prop.txt")
-        propertyRent = prop[self.position-1]['rent']
-        if propertyRent > self.coins:
-            self.retire = True
-        else:
-            self.coins -= propertyRent
-            print(f"{propertyRent} were charged, You now have {self.coins} left")
+    def getPropertyRent(self,position):
+        gpt = gb.Gameboard()
+        gpt.setup_board()
+        list = gpt.getProptertyList
+        property_rent = list[position - 1]["rent"]
+        print("getPropertyRent has run")
+        return property_rent
 
     def getPropertyPrice(self,position):
-        property_name = self.getPropertyName(position)
-        return propertiesdict.get(property_name,1)
+        gpt = gb.Gameboard()
+        gpt.setup_board()
+        list = gpt.getProptertyList
+        property_price = list[position - 1]["price"]
+        print("getPropertyPrice has run")
+        return property_price
+
 
     def getPropertyName(self,position):
-        list_properties = list(propertiesdict.keys())
-        return list_properties[position - 1]
+        gpt = gb.Gameboard()
+        gpt.setup_board()
+        list = gpt.getProptertyList
+        property_name = list[position - 1]["name"]
+        print("getPropertyName has run")
+        return property_name
 
     def getPropertyType(self,position):
         gpt = gb.Gameboard()
         gpt.setup_board()
         list = gpt.getProptertyList()
-        print(len(list))
+        #print(len(list))
         #result = ["Property" if item["rent"] > 0 else item["name"] for item in list]
         item = list[position-1]
         if item["rent"] > 0:
@@ -141,6 +104,7 @@ class Character():
 
     def getStatus(self):
         return self.in_jail, self.in_jail_round #要改
+
 
     def go_to_jail(self):
         key = list(propertiesdict.keys())
