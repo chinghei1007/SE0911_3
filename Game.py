@@ -11,8 +11,8 @@ def buyOrPayRent(player, sqaure, position, gameboard):
     price = gameboard.getPropertyPrice(position)
     rent = gameboard.getPropertyRent(position)
     print(f"\nProperty information: {name}"
-          f"Price: {price}"
-          f"Rent: {rent}")
+          f" Price: {price}"
+          f" Rent: {rent}")
     if not (gameboard.IsOwned(position)):
         while (True):
             value = input(f"Would you like to Buy (B) or Pass (P) {name}?: ").lower()
@@ -46,12 +46,12 @@ def payRent(name, position, player ,gameboard):
     propertyRent = gameboard.getPropertyRent(position)
     propertyOwned = gameboard.OwnedbyID(position)
     if propertyRent > player.coins:
-        self.retire = True
+        player.retire = True
         print(f"Insufficient balance to pay rent {propertyRent}, you will now be retired")
     else:
         player.coins -= propertyRent
         IDandRent = [propertyOwned,propertyRent]
-        print(f"{propertyRent} were charged, You now have {self.coins} left")
+        print(f"{propertyRent} were charged, You now have {player.coins} left")
 
     return IDandRent
 
@@ -115,12 +115,14 @@ def special_square(player, sqare, position, gameboard):
             return payRentandID
         case "Go":  # coin +1500
             player.coin_change(1500)
+            print("Blance changed +1500")
+            print(f"You now have ${player.coins}")
             return payRentandID
         case "Chance":  # coin +200 to -300
             change = (random.randint(-30, 20) * 10)
             player.coin_change(change)
             print(f"Balance changed {change}")
-            print(f"You now have {player.coins} left")
+            print(f"You now have ${player.coins} left")
             return payRentandID
         case "Tax":
             player.coin_change(-int(player.coins * 0.1))
@@ -133,6 +135,7 @@ def special_square(player, sqare, position, gameboard):
             player.go_to_jail()
             return payRentandID
         case "Jail":
+            if not player.in_jail: print("No changes would be made")
             return payRentandID
             # 7 kinds of square
 

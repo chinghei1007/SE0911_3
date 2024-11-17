@@ -26,11 +26,21 @@ class Gameboard:
             print(f"{item['owned']}: ")"""
         return self.sqaures
 
-    def IsOwned(self,propertyName):
+    def activateOwned(self, position, ID):
+        self.sqaures[position-1]["owned"] = ID
+
+    def IsOwned(self,position):
+        propertyName = self.getPropertyName(position)
         for i, item in enumerate(self.sqaures):
             if propertyName in item['name'] and item['owned'] >= 0: return True
             if propertyName in item['name'] and item['owned'] < 0: return False
         print("IsOwned: property Not Found")
+
+    def OwnedbyID(self,position):
+        position -= 1
+        prop_name = self.sqaures[position]['name']
+        owner_id = self.sqaures[position]['owned']
+        return owner_id
 
     def outputOwnedBy(self, position, player_names):
         position -= 1
@@ -44,7 +54,7 @@ class Gameboard:
     def getProptertyList(self):
         return self.sqaures
 
-    def getPropertyNamewithOwned(self, player_names):
+    def printPropertyNamewithOwned(self, player_names):
         path = self.getDefaultPath()
         with open(path, 'r') as file:
             lines = file.readlines()
@@ -55,7 +65,7 @@ class Gameboard:
 
                 if rent > 0:
                     owner_name = self.outputOwnedBy(i + 1, player_names)
-                    print(f"{i + 1}. {name} - Owned by {owner_name}")
+                    print(f"{i + 1}. {name} - Owned by {owner_name} - Price: ${price} - Rent: ${rent}")
                 elif name in ["Go", "Tax", "Chance", "Jail", "Go to Jail"]:
                     print(f"{i + 1}. {name}")
 
@@ -213,4 +223,17 @@ class Gameboard:
 
     def getDefaultPath(self):
         return self.defaultpath
+
+    def getPropertyName(self,position):
+        position = int(position)
+        return self.sqaures[position-1]["name"]
+
+    def getPropertyPrice(self,posistion):
+        position = int(posistion)
+        return self.sqaures[posistion-1]["price"]
+
+    def getPropertyRent(self,posistion):
+        position = int(posistion)
+        return self.sqaures[posistion-1]["rent"]
+
 
