@@ -6,7 +6,7 @@ from tkinter import filedialog
 
 
 def drawDice():
-    return random.randint(1, 6)
+    return random.randint(1, 4) #4 faced dice
 
 def developerMode(o):
     while True:
