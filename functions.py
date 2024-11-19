@@ -34,6 +34,7 @@ def developerMode(o):
 
 def modifyGb(o):
     o.modifyGameboard()
+
 def importGbFunc():
     root = tk.Tk()
     file_path = filedialog.askopenfilename(title="Browse File", filetypes=[("Text files", "*.txt")])
@@ -59,6 +60,8 @@ def exportGbFunc(o):
         print(f"Gameboard exported to: {path}")
     else:
         print("Export cancelled.")
+
+    root.destroy()
 
 def getDefaultPath():
     config = configparser.ConfigParser()
