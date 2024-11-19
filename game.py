@@ -159,9 +159,10 @@ while True:
 
     dev = input("Are you a developer? y/n: ").strip().lower()
     if dev == 'y':
+        print("Now will take you to game setup")
         functions.developerMode(gameboard)
     elif dev == 'n':
-        print("Now will take you to game setup")
+        print("Now will take you to the game")
     else:
         print("invalid input, please try again")
         continue

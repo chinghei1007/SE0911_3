@@ -12,11 +12,16 @@ class Gameboard:
             raise SystemExit
 
     def reinitializeBoard(self,path):
+        original = self.sqaures
         self.sqaures = inst.read_to_list(path) #[{name}{price}{rent}]
         #self.sqaures = inst.read_to_list("property.txt")
-        if not self.validate_board(self.sqaures):
-            print("Board error, the game will now terminate, please contact gameboard designer or use the default board")
-            raise SystemExit
+        if self.validate_board_noTerminate(self.sqaures):
+            self.setup.board()
+        else:
+            print("Board invalid, Original Board would be used instead")
+            self.sqaures = original
+
+
 
     def setup_board(self):
         for key in range(len(self.sqaures)):
@@ -85,7 +90,7 @@ class Gameboard:
                 if rent > 0:
                     print(f"{i+1}. {name}")
 
-    def importGbfromFunc(self,path):
+    def importGbfromFunc(self,path): #test
         self.sqaures = inst.read_to_list(path)
 
     """def exportGameboard(self, listDict):
@@ -126,7 +131,7 @@ class Gameboard:
 
         file_path = os.path.abspath(file_path)
 
-    def listDictToCommaDivided(self, listDict):
+    def listDictToCommaDivided(self, listDict): #test
         lines = []
         for item in listDict:
             line = f"{item['name']},{item['price']},{item['rent']}"
