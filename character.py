@@ -4,29 +4,9 @@ import gameboard as gb
 import random
 
 player_count = 0
-propertiesdict = {
-    'Go' : 0, #should not be changed
-    'Central' : 800,
-    'Wan Chai' : 700,
-    'Income Tax' : -10,
-    'Stanley' : 600,
-    'Jail' : 0,
-    'Shek O' : 400,
-    'Mong Kok' : 500,
-    '? Chance' : 0,
-    'Tsing Yi' : 400,
-    'Free Parking' : 0,
-    'Shatin' : 700,
-    '? Chance' : 0,
-    'Tuen Mun' : 400,
-    'Tai Po' : 500,
-    'Go to Jail' : 0,
-    'Sai Kung' : 400,
-    'Yuen Long': 400,
-    '? Chance': 0,
-    'Tai O': 600
-
-}
+a = gb.Gameboard()
+a.setup_board()
+list = a.getProptertyList()
 
 defaultpropertycost = (-1,800,700,-1,600,-1,400,500,-1,400,-1,700,-1,400,500,-1,400,400,-1,600)
 class Character():
@@ -100,9 +80,8 @@ class Character():
         return self.in_jail, self.in_jail_round #要改
 
     def go_to_jail(self):
-        key = list(propertiesdict.keys())
-        print(key.index("Jail"))
-        self.position = key.index("Jail")+1 #find jail position
+        jail_index = next((i for i, d in enumerate(list) if d["name"] == "Jail"), -1)
+        self.position = jail_index+1 #find jail position
         self.in_jail = True
         # when in jail, round ++
 
@@ -111,7 +90,7 @@ class Character():
         self.in_jail_round = 0
         self.position += steps
 
-    def IsRetired(self):
+    def isRetired(self):
         return self.retire
 
     def go_retire(self):
@@ -136,7 +115,7 @@ class Character():
 
         return self.coins, self.position
 
-    def switchToJail(self):
+    def switchToJail(self): #testPurpose
         if self.in_jail == True: return
         self.in_jail = True
 

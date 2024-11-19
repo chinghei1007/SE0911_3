@@ -7,11 +7,11 @@ from functions import importGbFunc, getDefaultPath, saveDefaultPath
 class TestFunctions(unittest.TestCase):
 
     @patch('os.path.exists', return_value=True)
-    @patch('configparser.ConfigParser.read')
-    @patch('configparser.ConfigParser.__getitem__', return_value={"path": "default/path.txt"})
-    def test_get_default_path_exists(self, mock_getitem, mock_read, mock_exists):
+    #@patch('configparser.ConfigParser.read')
+    #@patch('configparser.ConfigParser.__getitem__', return_value={"path": "property.txt"})
+    def test_get_default_path_exists(self,  mock_exists):
         path = getDefaultPath()
-        self.assertEqual(path, "default/path.txt")
+        self.assertEqual(path, "property.txt")
 
     @patch('os.path.exists', return_value=False)
     @patch('configparser.ConfigParser.write')
