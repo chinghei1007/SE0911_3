@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ddb709a-b977-4daf-a7c2-66f1548c07f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/testproperty.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/character.py" beforeDir="false" afterPath="$PROJECT_DIR$/character.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gameboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/gameboard.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/instructions.py" beforeDir="false" afterPath="$PROJECT_DIR$/instructions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testcharacter.py" beforeDir="false" afterPath="$PROJECT_DIR$/testcharacter.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -280,7 +273,23 @@
       <option name="project" value="LOCAL" />
       <updated>1732019632113</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="1119 2143 importexport now work as intended, developer mode will work">
+      <option name="closed" value="true" />
+      <created>1732023815628</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1732023815628</updated>
+    </task>
+    <task id="LOCAL-00013" summary="1119 2143 importexport now work as intended, developer mode will work">
+      <option name="closed" value="true" />
+      <created>1732023928055</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1732023928055</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -324,7 +333,8 @@
     <MESSAGE value="changed names" />
     <MESSAGE value="1119 2021 changed character.py gotojail due to logic mistakes, added testcharacter" />
     <MESSAGE value="1119 2033 testinstructions line 33 fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="1119 2033 testinstructions line 33 fixed" />
+    <MESSAGE value="1119 2143 importexport now work as intended, developer mode will work" />
+    <option name="LAST_COMMIT_MESSAGE" value="1119 2143 importexport now work as intended, developer mode will work" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -80,10 +80,20 @@ def getDefaultPath():
                 config.write(f)
                 return "property.txt"
 
-def saveDefaultPath(path):
-    config = configparser.ConfigParser()
-    config.read("config.ini")
-    config["DEFAULT"]["path"] = path
-    with open("config.ini", "w") as f:
-        config.write(f)
-    print("Default Path set")
+
+def saveDefaultPath(root):
+    path = filedialog.asksaveasfilename(
+        parent=root,
+        title="Choose your default save location",
+        defaultextension=".txt",
+        filetypes=[("Text Files", "*.txt")])
+
+    if path:
+        config = configparser.ConfigParser()
+        config.read("config.ini")
+        config["DEFAULT"]["path"] = path
+        with open("config.ini", "w") as f:
+            config.write(f)
+        print("Default Path set")
+    else:
+        print("Default path not set.")
