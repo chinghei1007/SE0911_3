@@ -16,7 +16,7 @@ class Test(unittest.TestCase):
         ownedProperties = char.property
         ownedPropertiesfunc = char.getOwnedProperties()
         injail = char.getStatus() #False, 0
-        retire = char.isRetired() #False
+        retire = char.IsRetired() #False
 
         self.assertEqual(name, "testChar")
         self.assertEqual(coins,1500)

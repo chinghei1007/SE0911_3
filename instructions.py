@@ -123,3 +123,14 @@ def double_confirm():
             case _:
                 print("Please type only y or n")
                 continue
+def double_confirm_true_false():
+    while True:
+        choice = input("Are you sure? (y/n)")
+        match choice:
+            case 'y':
+                return True
+            case 'n':
+                return False
+            case _:
+                print("Please type only y or n")
+                continue

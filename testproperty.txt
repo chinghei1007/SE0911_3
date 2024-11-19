@@ -1,0 +1,20 @@
+Go,0,0
+Central1,800,90
+Wan Chai1,700,65
+Tax,0,0
+Stanley1,600,60
+Jail,0,0
+Shek O1,400,10
+Mong Kok1,500,40
+Chance,0,0
+Tsing Yi1,400,15
+Free Parking,0,0
+Shatin1,700,75
+Chance,0,0
+Tuen Mun1,400,20
+Tai Po1,500,25
+Go To Jail,0,0
+Sai Kung1,400,10
+Yuen Long,400,25
+Chance,0,0
+Tai O,600,25

@@ -11,6 +11,13 @@ class Gameboard:
             print("Board error, the game will now terminate, please contact gameboard designer or use the default board")
             raise SystemExit
 
+    def reinitializeBoard(self,path):
+        self.sqaures = inst.read_to_list(path) #[{name}{price}{rent}]
+        #self.sqaures = inst.read_to_list("property.txt")
+        if not self.validate_board(self.sqaures):
+            print("Board error, the game will now terminate, please contact gameboard designer or use the default board")
+            raise SystemExit
+
     def setup_board(self):
         for key in range(len(self.sqaures)):
             self.sqaures[key]["owned"] = -1 #no one owned any sqaures, if owned, change to corresponding
@@ -155,7 +162,58 @@ class Gameboard:
             return False
         return True
 
-    def validate_board(self, board_data):
+    def modifyGameboard(self):
+        while True:
+            backup = self.sqaures
+            print("\nOptions:"
+                  "1. Change property order"
+                  "2. Change property name"
+                  "3. Save and exit")
+            choice = input("Enter your choice (1-3): ")
+
+            if choice == "1":
+                print("\nCurrent order:")
+                self.getProptertyList()
+                try:
+                    old_pos = input_number_within_range(1,20)
+                    new_pos = input_number_within_range(1,20)
+                    property = self.sqaures.pop(old_pos-1)
+                    self.sqaures.insert(new_pos-1,property)
+                    print("Property order updated.")
+                except ValueError:
+                    print("Invalid input. Please try again.")
+
+            elif choice == "2":
+                print("\nCurrent properties")
+                self.getProptertyList()
+                try:
+                    pos = input_number_within_range(1, 20)
+                    newName = input("Enter the new property name: ")
+                    if double_confirm_true_false():
+                        self.sqaures[pos-1]['name'] = newName
+                        print("Property name updated.")
+                    else:
+                        print("No changes would be made")
+                except ValueError:
+                    print("Invalid input. Please try again.")
+
+            elif choice == "3":
+                if not self.validate_board_noTerminate():
+                    while True:
+                        ch2 = input("Would you like to continue modifying(m) or exit without save(e)? ").strip().lower()
+                        if ch2 == "m":
+                            break
+                        if ch2 == "e":
+                            self.sqaures = backup
+                            print("No changes would be saved")
+                            return
+                        else:
+                            print("Invalid input. Please try again")
+                            continue
+
+
+
+    def validate_board(self, board_text):
         go_count = 0
         tax_count = 0
         jail_count = 0
@@ -216,6 +274,71 @@ class Gameboard:
             for error in errors:
                 print(error)
             raise SystemExit("Board data is not valid.")
+
+        return True
+
+    def validate_board_noTerminate(self, board_data):
+        go_count = 0
+        tax_count = 0
+        jail_count = 0
+        chance_count = 0
+        gotojail_count = 0
+        errors = []
+
+        if len(board_data) != 20:
+            errors.append(f"Error: The board data must have exactly 20 lines, but found {len(board_data)} lines.")
+
+        for i, line in enumerate(board_data, start=1):
+            if len(line) != 3:
+                errors.append(f"Format error: Line {i} must have exactly 3 keys (name, price, rent).")
+                continue
+
+            name = line['name']
+            price = line['price']
+            rent = line['rent']
+
+            if name == 'Go':
+                go_count += 1
+                if price != 0 or rent != 0:
+                    errors.append(
+                        f"Error: Line {i} - Go must have 0 for both price and rent, but got ({price}, {rent}).")
+            elif name == 'Tax':
+                tax_count += 1
+                if price != 0 or rent != 0:
+                    errors.append(
+                        f"Error: Line {i} - Tax must have 0 for both price and rent, but got ({price}, {rent}).")
+            elif name == 'Jail':
+                jail_count += 1
+                if price != 0 or rent != 0:
+                    errors.append(
+                        f"Error: Line {i} - Jail must have 0 for both price and rent, but got ({price}, {rent}).")
+            elif name == 'Chance':
+                chance_count += 1
+                if price != 0 or rent != 0:
+                    errors.append(
+                        f"Error: Line {i} - Chance must have 0 for both price and rent, but got ({price}, {rent}).")
+            elif name == 'Go To Jail':
+                gotojail_count += 1
+                if price != 0 or rent != 0:
+                    errors.append(
+                        f"Error: Line {i} - GoToJail must have 0 for both price and rent, but got ({price}, {rent}).")
+
+        if go_count != 1:
+            errors.append(f"Error: There must be exactly one Go, but found {go_count}.")
+        if tax_count < 1 or tax_count > 3:
+            errors.append(f"Error: There must be between 1 and 3 Tax, but found {tax_count}.")
+        if jail_count != 1:
+            errors.append(f"Error: There must be exactly one Jail, but found {jail_count}.")
+        if chance_count < 1 or chance_count > 3:
+            errors.append(f"Error: There must be between 1 and 3 Chance, but found {chance_count}.")
+        if gotojail_count < 1 or gotojail_count > 3:
+            errors.append(f"Error: There must be between 1 and 3 GoToJail, but found {gotojail_count}.")
+
+        if errors:
+            for error in errors:
+                print(error)
+            print("Board data is not valid.")
+            return False
 
         return True
 

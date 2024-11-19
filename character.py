@@ -90,6 +90,8 @@ class Character():
         self.in_jail_round = 0
         self.position += steps
 
+    def IsRetired(self):
+        return self.retire
     def isRetired(self):
         return self.retire
 

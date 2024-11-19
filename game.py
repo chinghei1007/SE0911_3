@@ -157,11 +157,11 @@ while True:
     gameboard = gb.Gameboard()
     completemap = gameboard.setup_board()  # returns list of dictionaries with properties information
 
-    dev = input("Are you a developer? y/n").strip().lower()
+    dev = input("Are you a developer? y/n: ").strip().lower()
     if dev == 'y':
         functions.developerMode(gameboard)
     elif dev == 'n':
-        print("okay")
+        print("Now will take you to game setup")
     else:
         print("invalid input, please try again")
         continue
