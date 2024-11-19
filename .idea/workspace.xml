@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ddb709a-b977-4daf-a7c2-66f1548c07f7" name="Changes" comment="changed names">
-      <change beforePath="$PROJECT_DIR$/.idea/SE0911_2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SE0911_2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="0ddb709a-b977-4daf-a7c2-66f1548c07f7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/character.py" beforeDir="false" afterPath="$PROJECT_DIR$/character.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testcharacter.py" beforeDir="false" afterPath="$PROJECT_DIR$/testcharacter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testinstructions.py" beforeDir="false" afterPath="$PROJECT_DIR$/testinstructions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +54,7 @@
     "Python.test.executor": "Run",
     "Python.testcharacter.executor": "Run",
     "Python.testinstructions.executor": "Run",
+    "Python.ui.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
@@ -64,7 +62,7 @@
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
-  <component name="RunManager" selected="Python.testcharacter">
+  <component name="RunManager" selected="Python.testinstructions">
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SE0911_2" />
       <option name="ENV_FILES" value="" />
@@ -163,8 +161,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.testcharacter" />
         <item itemvalue="Python.testinstructions" />
+        <item itemvalue="Python.testcharacter" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python tests.Python tests for testcharacter.Test.testPositionChange" />
         <item itemvalue="Python tests.Python tests for test.TestFunctions.test_save_default_path" />
@@ -259,7 +257,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731855578047</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="1119 2021 changed character.py gotojail due to logic mistakes, added testcharacter">
+      <option name="closed" value="true" />
+      <created>1732018940384</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1732018940384</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -301,7 +307,8 @@
     <MESSAGE value="1117 2034 big changes in code organization, including game, character" />
     <MESSAGE value="1117 2249 game logic is basically finished, please test out bugs" />
     <MESSAGE value="changed names" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed names" />
+    <MESSAGE value="1119 2021 changed character.py gotojail due to logic mistakes, added testcharacter" />
+    <option name="LAST_COMMIT_MESSAGE" value="1119 2021 changed character.py gotojail due to logic mistakes, added testcharacter" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

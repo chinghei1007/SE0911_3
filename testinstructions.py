@@ -18,17 +18,25 @@ class TestInstructions(unittest.TestCase):
             player_names = get_player_names(3)
             self.assertEqual(player_names, ['Tom', 'Mike', 'Xavier'])
 
-    @patch('builtins.input', side_effect=['1', 'Mike', 'y'])              #not working
+    '''@patch('builtins.input', side_effect=['1', 'Mike', 'y'])              #not working
     def test_change_player_names(self, mock_input):
 
-        player_names = ['Tom', 'Jerry',]
+        player_names = ['Tom', 'Jerry']
 
 
         updated_names = change_player_names(player_names)
 
 
         self.assertEqual(updated_names[0], 'Mike')
-        self.assertEqual(updated_names[1], 'Jerry')
+        self.assertEqual(updated_names[1], 'Jerry' '''
+
+    @patch('builtins.input', side_effect=['1','aa','0','y'])
+    def test_change_player_names(self,mockinput):
+        player_names = ['a', 'b']
+        updated_names = change_player_names(player_names)
+
+        self.assertEqual(updated_names,['aa','b'])
+
 
 
 
