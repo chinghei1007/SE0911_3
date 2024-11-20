@@ -226,10 +226,10 @@ class Gameboard:
         gotojail_count = 0
         errors = []
 
-        if len(board_data) != 20:
+        if len(board_text) != 20:
             errors.append(f"Error: The board data must have exactly 20 lines, but found {len(board_data)} lines.")
 
-        for i, line in enumerate(board_data, start=1):
+        for i, line in enumerate(board_text, start=1):
             if len(line) != 3:
                 errors.append(f"Format error: Line {i} must have exactly 3 keys (name, price, rent).")
                 continue

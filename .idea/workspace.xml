@@ -36,34 +36,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Python tests.Python tests for test.MyTestCase.executor": "Run",
-    "Python tests.Python tests for test.TestFunctions.executor": "Run",
-    "Python tests.Python tests for test.TestFunctions.test_get_default_path_creates_file.executor": "Run",
-    "Python tests.Python tests for test.TestFunctions.test_get_default_path_exists.executor": "Run",
-    "Python tests.Python tests for test.TestFunctions.test_import_gameboard_and_not_set_default.executor": "Run",
-    "Python tests.Python tests for test.TestFunctions.test_import_gameboard_and_set_default.executor": "Run",
-    "Python tests.Python tests for test.TestFunctions.test_save_default_path.executor": "Run",
-    "Python tests.Python tests for testcharacter.Test.testPositionChange.executor": "Run",
-    "Python tests.Python tests in test.py.executor": "Run",
-    "Python.Game.executor": "Run",
-    "Python.character.executor": "Run",
-    "Python.functions.executor": "Run",
-    "Python.game.executor": "Run",
-    "Python.gameboard.executor": "Run",
-    "Python.test.executor": "Run",
-    "Python.testcharacter.executor": "Run",
-    "Python.testinstructions.executor": "Run",
-    "Python.ui.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Temp/SE0911_2",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Python tests.Python tests for test.MyTestCase.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test.TestFunctions.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test.TestFunctions.test_get_default_path_creates_file.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test.TestFunctions.test_get_default_path_exists.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test.TestFunctions.test_import_gameboard_and_not_set_default.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test.TestFunctions.test_import_gameboard_and_set_default.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test.TestFunctions.test_save_default_path.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for testcharacter.Test.testPositionChange.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Game.executor&quot;: &quot;Run&quot;,
+    &quot;Python.character.executor&quot;: &quot;Run&quot;,
+    &quot;Python.functions.executor&quot;: &quot;Run&quot;,
+    &quot;Python.game.executor&quot;: &quot;Run&quot;,
+    &quot;Python.gameboard.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.testcharacter.executor&quot;: &quot;Run&quot;,
+    &quot;Python.testinstructions.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ui.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Temp/SE0911_2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SE0911_2" />
@@ -163,9 +163,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.testinstructions" />
         <item itemvalue="Python.testcharacter" />
-        <item itemvalue="Python.test" />
         <item itemvalue="Python tests.Python tests for testcharacter.Test.testPositionChange" />
         <item itemvalue="Python tests.Python tests for test.TestFunctions.test_save_default_path" />
       </list>
