@@ -2,6 +2,7 @@ import os.path
 from tkinter import Tk, filedialog
 import functions
 import instructions as inst
+from instructions import *
 class Gameboard:
     def __init__(self):
         self.defaultpath = functions.getDefaultPath()
@@ -227,7 +228,7 @@ class Gameboard:
         errors = []
 
         if len(board_text) != 20:
-            errors.append(f"Error: The board data must have exactly 20 lines, but found {len(board_data)} lines.")
+            errors.append(f"Error: The board data must have exactly 20 lines, but found {len(board_text)} lines.")
 
         for i, line in enumerate(board_text, start=1):
             if len(line) != 3:
