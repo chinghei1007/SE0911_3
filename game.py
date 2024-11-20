@@ -204,6 +204,16 @@ while True:
             print(f"Congratulations, {player_names_in_game[0]} has won the game!")
             break
 
+    else:
+        print("The game has reached round 100, player with most coins will win.")
+        player_coins ={character.getName:character.getCoins() for c in character}
+        if player_coins:
+            max_coins =max(player_coins.values())
+        winners =[character for name, coins in character.coins() if coins==max_coins]
+        if len(winners)>1:
+            print(f"It is a tie, {', '.join(winners)}with{max_coins} has won.")
+        else:
+            print(f"{winners[0]} is the winner with {max_coins}")
     if input("Do you want to play again? (y/n)").lower().strip() != 'y':
         break
 

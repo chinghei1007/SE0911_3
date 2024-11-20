@@ -76,6 +76,9 @@ class Character():
     def getOwnedProperties(self):
         return self.property
 
+    def getCoins(self):
+        return self.coins
+
     def getStatus(self):
         return self.in_jail, self.in_jail_round #要改
 

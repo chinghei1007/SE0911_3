@@ -9,6 +9,8 @@ class Test(unittest.TestCase):
         position = o.getPosition()
         self.assertEqual(position,17)
 
+
+
     def testCharacterInitialization(self):
         char = chrtr.Character("testChar")
         name = char.getName()
@@ -36,5 +38,20 @@ class Test(unittest.TestCase):
         char.releaseFromJail(8)
         self.assertEqual(False,char.in_jail)
         self.assertEqual(14,char.position)
+
+    def test_coin_change(self):
+        he= chrtr.Character("Tom")
+        he.coin_change(500)
+        self.assertEqual(he.coins,2000)
+
+    def test_coin_change_to_neg_and_retire(self):
+        he = chrtr.Character("Tom")
+        he.coin_change(-2500)
+        self.assertEqual(he.coins,-1000)
+        self.assertEqual(he.retire,True)
+        self.assertEqual(he.property, [])
+
+
+
 if __name__ == '__main__':
     unittest.main()
