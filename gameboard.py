@@ -204,7 +204,7 @@ class Gameboard:
                     print("Invalid input. Please try again.")
 
             elif choice == "3":
-                if not self.validate_board_noTerminate():
+                if not self.validate_board_noTerminate(self.sqaures):
                     while True:
                         ch2 = input("Would you like to continue modifying(m) or exit without save(e)? ").strip().lower()
                         if ch2 == "m":
@@ -295,9 +295,9 @@ class Gameboard:
             errors.append(f"Error: The board data must have exactly 20 lines, but found {len(board_data)} lines.")
 
         for i, line in enumerate(board_data, start=1):
-            if len(line) != 3:
-                errors.append(f"Format error: Line {i} must have exactly 3 keys (name, price, rent).")
-                continue
+            if len(line) != 4:
+                errors.append(f"Format error: Line {i} must have exactly 4 keys (name, isOwned, price, rent).")
+
 
             name = line['name']
             price = line['price']
