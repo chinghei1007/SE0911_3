@@ -3,7 +3,7 @@ import os.path
 import random
 import tkinter as tk
 from tkinter import filedialog
-
+#1
 
 def drawDice():
     return random.randint(1, 4) #4 faced dice

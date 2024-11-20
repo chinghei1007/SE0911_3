@@ -81,7 +81,7 @@ class Gameboard:
                     print(f"{i + 1}. {name}")
 
     def printPropertyName(self,path): #test function
-        with open(path, 'r') as file:
+        with open(path, 'r') as file: #123
             lines = file.readlines()
 
             for i, line in enumerate(lines):

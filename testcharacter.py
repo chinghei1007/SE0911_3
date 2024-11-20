@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import patch
 import character as chrtr
-
+#1
 class Test(unittest.TestCase):
     def testPositionChange(self):
         o = chrtr.Character("May")

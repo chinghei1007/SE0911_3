@@ -64,7 +64,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.test">
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SE0911_2" />
       <option name="ENV_FILES" value="" />
@@ -163,9 +163,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test" />
         <item itemvalue="Python.testinstructions" />
         <item itemvalue="Python.testcharacter" />
+        <item itemvalue="Python.test" />
         <item itemvalue="Python tests.Python tests for testcharacter.Test.testPositionChange" />
         <item itemvalue="Python tests.Python tests for test.TestFunctions.test_save_default_path" />
       </list>
