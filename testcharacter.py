@@ -35,9 +35,20 @@ class Test(unittest.TestCase):
         inJailStatus = char.in_jail
         self.assertEqual(6,position)
         self.assertEqual(True, inJailStatus)
-        char.releaseFromJail(8)
+        char.releaseFromJail(4, 4)
         self.assertEqual(False,char.in_jail)
         self.assertEqual(14,char.position)
+
+        char1 = chrtr.Character("b")
+        self.assertEqual((False, 0), char.getStatus())
+        char1.go_to_jail()
+        position = char1.position
+        inJailStatus = char1.in_jail
+        self.assertEqual(6, position)
+        self.assertEqual(True, inJailStatus)
+        char1.releaseFromJailPayFine(4, 4)
+        self.assertEqual(False, char1.in_jail)
+        self.assertEqual(14, char1.position)
 
     def test_coin_change(self):
         he= chrtr.Character("Tom")

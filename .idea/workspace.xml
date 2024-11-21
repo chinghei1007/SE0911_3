@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ddb709a-b977-4daf-a7c2-66f1548c07f7" name="Changes" comment="1121 2145 terminology switch">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="0ddb709a-b977-4daf-a7c2-66f1548c07f7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/instructions.py" beforeDir="false" afterPath="$PROJECT_DIR$/instructions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testcharacter.py" beforeDir="false" afterPath="$PROJECT_DIR$/testcharacter.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +36,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Python tests.Python tests for testcharacter.Test.executor": "Run",
     "Python.game.executor": "Run",
     "Python.instructions.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -46,6 +45,28 @@
     "git-widget-placeholder": "master"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="Python tests for testcharacter.Test" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="SE0911_2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;testcharacter.Test&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Python tests for testcharacter.Test" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -86,7 +107,23 @@
       <option name="project" value="LOCAL" />
       <updated>1732196752915</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="1121 2145 added randomized names if empty input">
+      <option name="closed" value="true" />
+      <created>1732198216446</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1732198216446</updated>
+    </task>
+    <task id="LOCAL-00005" summary="1121 2223 change logic error in character">
+      <option name="closed" value="true" />
+      <created>1732199023929</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1732199023929</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -94,7 +131,9 @@
     <MESSAGE value="1121 1651 bugs in gameboard" />
     <MESSAGE value="1121 2109 rebase" />
     <MESSAGE value="1121 2145 terminology switch" />
-    <option name="LAST_COMMIT_MESSAGE" value="1121 2145 terminology switch" />
+    <MESSAGE value="1121 2145 added randomized names if empty input" />
+    <MESSAGE value="1121 2223 change logic error in character" />
+    <option name="LAST_COMMIT_MESSAGE" value="1121 2223 change logic error in character" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
