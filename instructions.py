@@ -82,7 +82,7 @@ def print_player_names(player_names):
             print(f"Player {i} : {name}")
 
 def draw():
-    return (random.randint(1,6),random.randint(1,6))
+    return (random.randint(1, 4), random.randint(1, 4))
 
 def read_to_list(path): #input text file, designer 要改東西就入去改
     list = []

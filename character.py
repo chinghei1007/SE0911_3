@@ -97,7 +97,8 @@ class Character():
         self.in_jail = False
         self.in_jail_round = 0
         self.position_change(step1, step2)
-        self.coins -= 150
+        self.coin_change(-150)
+        print("$150 were charged")
     def IsRetired(self):
         return self.retire
     def isRetired(self):

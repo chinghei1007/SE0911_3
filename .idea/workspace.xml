@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="0ddb709a-b977-4daf-a7c2-66f1548c07f7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testcharacter.py" beforeDir="false" afterPath="$PROJECT_DIR$/testcharacter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/character.py" beforeDir="false" afterPath="$PROJECT_DIR$/character.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/instructions.py" beforeDir="false" afterPath="$PROJECT_DIR$/instructions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testinstructions.py" beforeDir="false" afterPath="$PROJECT_DIR$/testinstructions.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +40,8 @@
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Python tests.Python tests for testcharacter.Test.executor": "Run",
+    "Python tests.Python tests for testinstructions.TestInstructions.test_input_number_within_range.executor": "Run",
+    "Python tests.Python tests in testinstructions.py.executor": "Run",
     "Python.game.executor": "Run",
     "Python.instructions.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -45,7 +50,7 @@
     "git-widget-placeholder": "master"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python tests.Python tests for testinstructions.TestInstructions.test_input_number_within_range">
     <configuration name="Python tests for testcharacter.Test" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="SE0911_2" />
       <option name="ENV_FILES" value="" />
@@ -61,8 +66,40 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="Python tests for testinstructions.TestInstructions.test_input_number_within_range" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="SE0911_2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;testinstructions.TestInstructions.test_input_number_within_range&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in testinstructions.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="SE0911_2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/testinstructions.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests for testinstructions.TestInstructions.test_input_number_within_range" />
+        <item itemvalue="Python tests.Python tests in testinstructions.py" />
         <item itemvalue="Python tests.Python tests for testcharacter.Test" />
       </list>
     </recent_temporary>
@@ -123,7 +160,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732199023929</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="1121 2236 testcharacter.py modified">
+      <option name="closed" value="true" />
+      <created>1732199803614</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1732199803614</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -133,7 +178,8 @@
     <MESSAGE value="1121 2145 terminology switch" />
     <MESSAGE value="1121 2145 added randomized names if empty input" />
     <MESSAGE value="1121 2223 change logic error in character" />
-    <option name="LAST_COMMIT_MESSAGE" value="1121 2223 change logic error in character" />
+    <MESSAGE value="1121 2236 testcharacter.py modified" />
+    <option name="LAST_COMMIT_MESSAGE" value="1121 2236 testcharacter.py modified" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>

@@ -1,6 +1,8 @@
 import unittest
 from instructions import *
-from unittest.mock import patch, MagicMock
+from unittest.mock import patch, MagicMock, mock_open
+import string
+import io
 
 
 #1
@@ -76,6 +78,80 @@ class TestInstructions(unittest.TestCase):
     def test_double_confirm(self, mock_input):
         result = double_confirm()
         self.assertEqual(result, 'y')
+
+    # second set of test
+    def test_read_to_list2(self):
+        with patch('builtins.open', mock_open(read_data='name1, 10, 5\nname2, 20, 10\nname3, 30, 15')):
+            result = read_to_list('test_file.txt')
+            self.assertEqual(result, [
+                {'name': 'name1', 'price': 10, 'rent': 5},
+                {'name': 'name2', 'price': 20, 'rent': 10},
+                {'name': 'name3', 'price': 30, 'rent': 15}
+            ])
+
+        # Test file not found
+        with patch('builtins.print') as mock_print:
+            read_to_list('non_existent_file.txt')
+            mock_print.assert_called_with("Error: File not found")
+
+        # Test other exceptions
+        with patch('builtins.open', mock_open(read_data='name1, 10, a')), \
+                patch('builtins.print') as mock_print:
+            read_to_list('test_file.txt')
+            mock_print.assert_called()
+
+    def test_input_number_within_range2(self):
+        with patch('builtins.input', side_effect=['11', '0', 'abc', '5']), \
+                patch('builtins.print') as mock_print:
+            result = input_number_within_range(1, 10)
+            self.assertEqual(result, 5)
+            self.assertEqual(mock_print.call_count, 3)
+            mock_print.assert_any_call("Error: the number must be between 1 and 10. Please try again")
+            mock_print.assert_any_call("Please enter a valid number. ")
+
+    def test_double_confirm2(self):
+        # Test valid input 'y'
+        with patch('builtins.input', return_value='y'):
+            result = double_confirm()
+            self.assertEqual(result, 'y')
+
+        # Test valid input 'n'
+        with patch('builtins.input', return_value='n'):
+            result = double_confirm()
+            self.assertEqual(result, 'n')
+
+        # Test invalid input
+        with patch('builtins.input', side_effect=['invalid', 'y']), \
+                patch('builtins.print') as mock_print:
+            result = double_confirm()
+            self.assertEqual(result, 'y')
+            mock_print.assert_called_with("Please type only y or n")
+
+    def test_double_confirm_true_false(self):
+        # Test valid input 'y'
+        with patch('builtins.input', return_value='y'):
+            result = double_confirm_true_false()
+            self.assertTrue(result)
+
+        # Test valid input 'n'
+        with patch('builtins.input', return_value='n'):
+            result = double_confirm_true_false()
+            self.assertFalse(result)
+
+        # Test invalid input
+        with patch('builtins.input', side_effect=['invalid', 'y']), \
+                patch('builtins.print') as mock_print:
+            result = double_confirm_true_false()
+            self.assertTrue(result)
+            mock_print.assert_called_with("Please type only y or n")
+
+    def test_generate_random_string(self):
+        # Test random string generation
+        for _ in range(10):
+            result = generate_random_string(10)
+            self.assertEqual(len(result), 10)
+            self.assertTrue(all(c in string.ascii_letters + string.digits for c in result))
+
 
 if __name__ == '__main__':
     unittest.main()

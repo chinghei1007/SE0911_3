@@ -5,7 +5,7 @@ from instructions import *
 
 player_names = []
 def buyOrPayRent(player, sqaure, position, gameboard):
-    IDandRent = [0, -1]
+    RentandID = [0, -1]
     #print("buyOrPayRent has been run")
     name = gameboard.getPropertyName(position)
     price = gameboard.getPropertyPrice(position)
@@ -19,16 +19,16 @@ def buyOrPayRent(player, sqaure, position, gameboard):
             match value:
                 case "b":
                     buyProperty(name, position, player, gameboard)
-                    return IDandRent
+                    return RentandID
                 case "p":
                     print("No changes would be made")
-                    return IDandRent
+                    return RentandID
                 case _:
                     "Invalid input, please try again"
 
     else:
-        IDandRent = payRent(name, position, player, gameboard)
-        return IDandRent
+        RentandID = payRent(name, position, player, gameboard)
+        return RentandID
 
 def buyProperty(name, position, player, gameboard):
     propertyPrice = gameboard.getPropertyPrice(position)
@@ -42,18 +42,19 @@ def buyProperty(name, position, player, gameboard):
         print(f"You need {propertyPrice} but you only have {player.coins}. You couldn't buy the property. No changes were made")
 
 def payRent(name, position, player ,gameboard):
-    RentandID = [0,-1]
+    rentandID = [0, -1]
     propertyRent = gameboard.getPropertyRent(position)
     propertyOwned = gameboard.OwnedbyID(position)
     if propertyRent > player.coins:
         player.retire = True
         print(f"Insufficient balance to pay rent {propertyRent}, you will now be retired")
     else:
-        player.coins -= propertyRent
-        rentandID = [propertyRent,propertyOwned]
-        print(f"{propertyRent} were charged, You now have {player.coins} left")
-
-    return rentandID
+        player.coin_change(-propertyRent)
+        if not player.isRetired():
+            rentandID = [propertyRent, propertyOwned]
+            print(f"{propertyRent} were charged, You now have {player.coins} left")
+            return rentandID
+        return rentandID
 
 def draw_then_position_change(player, gameboard):
     step1 = functions.drawDice()
@@ -63,11 +64,23 @@ def draw_then_position_change(player, gameboard):
     print(f"You drawed {step1} and {step2}")
     # Check In jail rounds
     if player.in_jail_round == 3:
-        player.go_retire()
+        player.releaseFromJailPayFine(step1, step2)
         # If in jail, don't move
     elif player.in_jail:
         player.in_jail_round += 1
         print(f"You didn't draw double, you are in jail for {player.in_jail_round} rounds")
+        while (True):
+            inputt = input("Would you like to pay $150 to release from jail? (y/n)").lower().strip()
+            if inputt == "y":
+                player.releaseFromJailPayFine(step1, step2)
+                if player.position > 20:
+                    player.position -= 20
+                    print(f"Your position is now {player.position}")
+                    break
+            elif inputt == "n":
+                break
+            else:
+                print("Invalid input. Please try again")
         # If in jail and double dice, move
     elif player.in_jail & step1 == step2:
         player.releaseFromJail(step1 + step2)
