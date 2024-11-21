@@ -73,7 +73,7 @@ def getDefaultPath():
         if "DEFAULT" in config and "path" in config["DEFAULT"]:
             #print(config["DEFAULT"]["path"])
             return config["DEFAULT"]["path"]
-        else:
+    else:
             print("Now will set the default path")
             config["DEFAULT"] = {"path":"property.txt"}
             with open(file, "w") as f:
