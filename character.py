@@ -88,11 +88,16 @@ class Character():
         self.in_jail = True
         # when in jail, round ++
 
-    def releaseFromJail(self,steps):
+    def releaseFromJail(self, step1, step2):
         self.in_jail = False
         self.in_jail_round = 0
-        self.position += steps
+        self.position_change(step1, step2)
 
+    def releaseFromJailPayFine(self, step1, step2):
+        self.in_jail = False
+        self.in_jail_round = 0
+        self.position_change(step1, step2)
+        self.coins -= 150
     def IsRetired(self):
         return self.retire
     def isRetired(self):
@@ -104,13 +109,20 @@ class Character():
     def position_change(self,step1, step2):
         # Check In jail rounds
         if self.in_jail_round == 3:
-            self.go_retire()
+            self.releaseFromJailPayFine(step1, step2)
         # If in jail, don't move
         elif self.in_jail:
-            self.in_jail_round += 1
+            while (True):
+                uiput = input("Would you like to pay $150 to release from Jail? (y/n)").lower().strip()
+                if uiput == "y":
+                    self.releaseFromJailPayFine(step1, step2)
+                if uiput == "n":
+                    self.in_jail_round += 1
+                else:
+                    print("Invalid input. Please try again")
         # If in jail and double dice, move
         elif self.in_jail & step1==step2:
-            self.releaseFromJail(step1+step2)
+            self.releaseFromJail(step1, step2)
         else:
             #change position, then determine propter type, pass to special square
             self.position += step1+step2
