@@ -17,7 +17,7 @@ class Gameboard:
         self.sqaures = inst.read_to_list(path) #[{name}{price}{rent}]
         #self.sqaures = inst.read_to_list("property.txt")
         if self.validate_board_noTerminate(self.sqaures):
-            self.setup.board()
+            self.setup_board()
         else:
             print("Board invalid, Original Board would be used instead")
             self.sqaures = original

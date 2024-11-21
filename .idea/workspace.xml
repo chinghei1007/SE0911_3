@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ddb709a-b977-4daf-a7c2-66f1548c07f7" name="Changes" comment="1121 changed game input. lower().Strip()">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions.py" afterDir="false" />
+    <list default="true" id="0ddb709a-b977-4daf-a7c2-66f1548c07f7" name="Changes" comment="1121 changed gamebaord line 298 error">
+      <change beforePath="$PROJECT_DIR$/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gameboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/gameboard.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +78,7 @@
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
-  <component name="RunManager" selected="Python.game">
+  <component name="RunManager">
     <configuration name="game" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SE0911_2" />
       <option name="ENV_FILES" value="" />
@@ -342,7 +343,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732176460359</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="1121 changed gamebaord line 298 error">
+      <option name="closed" value="true" />
+      <created>1732177392498</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1732177392498</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -390,7 +399,8 @@
     <MESSAGE value="1119 2200 set default path modified" />
     <MESSAGE value="1120" />
     <MESSAGE value="1121 changed game input. lower().Strip()" />
-    <option name="LAST_COMMIT_MESSAGE" value="1121 changed game input. lower().Strip()" />
+    <MESSAGE value="1121 changed gamebaord line 298 error" />
+    <option name="LAST_COMMIT_MESSAGE" value="1121 changed gamebaord line 298 error" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -399,11 +409,6 @@
           <url>file://$PROJECT_DIR$/character.py</url>
           <line>100</line>
           <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test.py</url>
-          <line>11</line>
-          <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/testcharacter.py</url>
