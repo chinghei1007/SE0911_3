@@ -51,7 +51,7 @@ class Gameboard:
         position -= 1
         prop_name = self.sqaures[position]['name']
         owner_id = self.sqaures[position]['owned']
-        return owner_id
+        return int(owner_id)
 
     def outputOwnedBy(self, position, player_names):
         position -= 1
@@ -77,7 +77,7 @@ class Gameboard:
                 if rent > 0:
                     owner_name = self.outputOwnedBy(i + 1, player_names)
                     print(f"{i + 1}. {name} - Owned by {owner_name} - Price: ${price} - Rent: ${rent}")
-                elif name in ["Go", "Tax", "Chance", "Jail", "Go to Jail"]:
+                elif name in ["Go", "Tax", "Chance", "Jail", "Go To Jail", "Free Parking"]:
                     print(f"{i + 1}. {name}")
 
     def printPropertyName(self,path): #test function

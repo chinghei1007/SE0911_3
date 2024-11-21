@@ -42,7 +42,7 @@ def buyProperty(name, position, player, gameboard):
         print(f"You need {propertyPrice} but you only have {player.coins}. You couldn't buy the property. No changes were made")
 
 def payRent(name, position, player ,gameboard):
-    IDandRent = [0,-1]
+    RentandID = [0,-1]
     propertyRent = gameboard.getPropertyRent(position)
     propertyOwned = gameboard.OwnedbyID(position)
     if propertyRent > player.coins:
@@ -50,10 +50,10 @@ def payRent(name, position, player ,gameboard):
         print(f"Insufficient balance to pay rent {propertyRent}, you will now be retired")
     else:
         player.coins -= propertyRent
-        IDandRent = [propertyOwned,propertyRent]
+        rentandID = [propertyRent,propertyOwned]
         print(f"{propertyRent} were charged, You now have {player.coins} left")
 
-    return IDandRent
+    return rentandID
 
 def draw_then_position_change(player, gameboard):
     step1 = functions.drawDice()
@@ -126,13 +126,14 @@ def special_square(player, sqare, position, gameboard):
             return payRentandID
         case "Tax":
             player.coin_change(-int(player.coins * 0.1))
-            print(f"You now have {player.coins} left")
+            print(f"You need to pay Tax (10% of your balanced). You now have {player.coins} left")
             return payRentandID
         case "Free Parking":
             print("You've got Free Parking, no changes to your status")
             return payRentandID
         case "Go To Jail":
             player.go_to_jail()
+            print("You stepped into the Jail, Your position will be changed to 6")
             return payRentandID
         case "Jail":
             if not player.in_jail: print("No changes would be made")
@@ -192,7 +193,9 @@ while True:
                 input("Press Enter to roll the dice")
                 rentandID = draw_then_position_change(character, gameboard)
                 rent, ID = rentandID
+                print(len(user))
                 if ID > 0:
+                    print(f"ID is {ID}")
                     user[ID].coins += rent
 
         rounds += 1
