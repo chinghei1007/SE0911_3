@@ -10,7 +10,7 @@ def drawDice():
 
 def developerMode(o):
     while True:
-        print("What do you want?")
+        print("\nDeveloper Menu")
         print("1. Import gameboard")
         print("2. Export gameboard")
         print("3. Modify Gameboard")
