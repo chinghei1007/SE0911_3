@@ -1,4 +1,5 @@
 import random
+import string
 #1
 #0920: get player names > change player names
 #print player names, inputNumberWithinRange, draw, doubleConfirm
@@ -20,7 +21,10 @@ def get_player_names(num_players):
                 player_names.append(name)
                 break  # Exit the loop if a valid name is entered
             else:
-                print("Name cannot be empty or just whitespace. Please enter a valid name.")
+                randomname = generate_random_string(6)
+                print(f"Empty input, {randomname} would be set as player name.")
+                player_names.append(randomname)
+                break
 
     # Confirm or edit names
     while True:
@@ -134,3 +138,8 @@ def double_confirm_true_false():
             case _:
                 print("Please type only y or n")
                 continue
+
+
+def generate_random_string(length):
+    characters = string.ascii_letters + string.digits
+    return ''.join(random.choice(characters) for _ in range(length))
