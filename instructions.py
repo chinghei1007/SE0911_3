@@ -31,7 +31,7 @@ def get_player_names(num_players):
                 return player_names
             case 'e':
                 player_names = change_player_names(player_names)
-                break
+                return player_names
             case _:
                 print("Invalid input, try again.")
 
@@ -45,7 +45,7 @@ def change_player_names(player_names):
         choice = input_number_within_range(0,len(player_names))
         if choice == 0: break
         if 1 <= choice <= len(player_names):
-            new_name = input(f"Enter a new name for player {choice} (current: {player_names[choice - 1]}): ").strip()
+            new_name = input(f"Enter a new name for player {choice} (current: {player_names[choice - 1]}): ").strip().lower()
             if new_name:
                 player_names[choice - 1] = new_name
             else:
@@ -57,7 +57,7 @@ def change_player_names(player_names):
     while True:
         print(
         "\nIt is recommened to change the name again in case you typed the wrong name, choosing n will revert ALL changes")
-        confirm = input("Do you want to save these changes? (y to save, n to revert, c to continue editing)")
+        confirm = input("Do you want to save these changes? (y to save, n to revert, c to continue editing)").strip().lower()
         match confirm:
             case 'y':
                 print("Changes saved");return player_names

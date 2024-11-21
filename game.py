@@ -6,7 +6,7 @@ from instructions import *
 player_names = []
 def buyOrPayRent(player, sqaure, position, gameboard):
     IDandRent = [0, -1]
-    print("buyOrPayRent has been run")
+    #print("buyOrPayRent has been run")
     name = gameboard.getPropertyName(position)
     price = gameboard.getPropertyPrice(position)
     rent = gameboard.getPropertyRent(position)
@@ -15,7 +15,7 @@ def buyOrPayRent(player, sqaure, position, gameboard):
           f" Rent: {rent}")
     if not (gameboard.IsOwned(position)):
         while (True):
-            value = input(f"Would you like to Buy (B) or Pass (P) {name}?: ").lower()
+            value = input(f"Would you like to Buy (B) or Pass (P) {name}?: ").lower().strip()
             match value:
                 case "b":
                     buyProperty(name, position, player, gameboard)
@@ -107,7 +107,7 @@ def draw_then_position_change(player, gameboard):
 
 
 def special_square(player, sqare, position, gameboard):
-    print(f"Test special_sqaure has been run, {sqare}")
+    #print(f"Test special_sqaure has been run, {sqare}")
     payRentandID = [0, -1]
     match sqare:
         case "Property":

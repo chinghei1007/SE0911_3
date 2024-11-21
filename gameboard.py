@@ -26,7 +26,7 @@ class Gameboard:
 
     def setup_board(self):
         for key in range(len(self.sqaures)):
-            self.sqaures[key]["owned"] = -1 #no one owned any sqaures, if owned, change to corresponding
+            self.sqaures[key]["owned"] = -1 #no one owned any sqaures, if owned, change to corresponding ID
             #sqaures : [name] [price] [rent] [owned]
         #unit test 1109
         """for index, item in enumerate(self.sqaures):
