@@ -16,7 +16,7 @@ def developerMode(o):
         print("3. Modify Gameboard")
         print("4. Exit")
 
-        choice = input("Enter your choice (1-3): ")
+        choice = input("Enter your choice (1-4): ")
 
         if choice == '1':
             path = importGbFunc()
@@ -47,8 +47,8 @@ def exportGbFunc(o):
     for dict in current:
         toText += f"{dict['name']},{dict['price']},{dict['rent']}\n"
 
-    root = tk.Tk
-    root.title("Choose your save location")
+    root = tk.Tk()
+    #root.title("Choose your save location")
     path = filedialog.asksaveasfilename(
         defaultextension=".txt",
         filetypes=[("Text Files", "*.txt")]

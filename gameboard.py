@@ -295,7 +295,7 @@ class Gameboard:
             errors.append(f"Error: The board data must have exactly 20 lines, but found {len(board_data)} lines.")
 
         for i, line in enumerate(board_data, start=1):
-            if len(line) != 4:
+            if len(line) != 3:
                 errors.append(f"Format error: Line {i} must have exactly 4 keys (name, isOwned, price, rent).")
 
 
