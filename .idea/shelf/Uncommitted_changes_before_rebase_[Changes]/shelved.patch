@@ -1,0 +1,691 @@
+Index: backup txt/property.txt
+===================================================================
+diff --git a/backup txt/property.txt b/backup txt/property.txt
+deleted file mode 100644
+--- a/backup txt/property.txt	(revision 20e9637c7f4b455707c957d2fbb39a6c477b8432)
++++ /dev/null	(revision 20e9637c7f4b455707c957d2fbb39a6c477b8432)
+@@ -1,20 +0,0 @@
+-Go,0,0
+-Central,800,90
+-Wan Chai,700,65
+-Tax,0,0
+-Stanley,600,60
+-Jail,0,0
+-Shek O,400,10
+-Mong Kok,500,40
+-Chance,0,0
+-Tsing Yi,400,15
+-Free Parking,0,0
+-Shatin,700,75
+-Chance,0,0
+-Tuen Mun,400,20
+-Tai Po,500,25
+-GoToJail,0,0
+-Sai Kung,400,10
+-Yuen Long,400,25
+-Chance,0,0
+-Tai O,600,25
+\ No newline at end of file
+Index: .idea/inspectionProfiles/profiles_settings.xml
+===================================================================
+diff --git a/.idea/inspectionProfiles/profiles_settings.xml b/.idea/inspectionProfiles/profiles_settings.xml
+deleted file mode 100644
+--- a/.idea/inspectionProfiles/profiles_settings.xml	(revision 20e9637c7f4b455707c957d2fbb39a6c477b8432)
++++ /dev/null	(revision 20e9637c7f4b455707c957d2fbb39a6c477b8432)
+@@ -1,6 +0,0 @@
+-<component name="InspectionProjectProfileManager">
+-  <settings>
+-    <option name="USE_PROJECT_PROFILE" value="false" />
+-    <version value="1.0" />
+-  </settings>
+-</component>
+\ No newline at end of file
+Index: .idea/vcs.xml
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+deleted file mode 100644
+--- a/.idea/vcs.xml	(revision 20e9637c7f4b455707c957d2fbb39a6c477b8432)
++++ /dev/null	(revision 20e9637c7f4b455707c957d2fbb39a6c477b8432)
+@@ -1,6 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="VcsDirectoryMappings">
+-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: ui.py
+===================================================================
+diff --git a/ui.py b/ui.py
+deleted file mode 100644
+--- a/ui.py	(revision 20e9637c7f4b455707c957d2fbb39a6c477b8432)
++++ /dev/null	(revision 20e9637c7f4b455707c957d2fbb39a6c477b8432)
+@@ -1,46 +0,0 @@
+-import tkinter as tk
+-from tkinter import ttk
+-
+-class MonopolyUI:
+-    def __init__(self, master, characters):
+-        self.master = master
+-        master.title("Monopoly")
+-        self.characters = characters
+-
+-        # Create the main frame
+-        self.main_frame = ttk.Frame(master)
+-        self.main_frame.pack(padx=20, pady=20)
+-
+-        # Create the round label
+-        self.round_label = ttk.Label(self.main_frame, text="Round x")
+-        self.round_label.grid(row=0, column=0, columnspan=6, pady=10)
+-
+-        # Create the player label
+-        self.player_label = ttk.Label(self.main_frame, text=" ".join(f"P{i+1}:{character.getName()}" for i, character in enumerate(self.characters)))
+-        self.player_label.grid(row=1, column=0, columnspan=6, pady=10)
+-
+-        # Create the property table
+-        self.property_table = ttk.Treeview(self.main_frame, columns=("Name", "Price", "Rent", "Owned"), show="headings")
+-        self.property_table.heading("Name", text="Name")
+-        self.property_table.heading("Price", text="Price")
+-        self.property_table.heading("Rent", text="Rent")
+-        self.property_table.heading("Owned", text="Owned")
+-        self.property_table.grid(row=2, column=0, columnspan=6, padx=10, pady=10)
+-
+-        # Create the player position labels
+-        self.player_position_labels = []
+-        for character in self.characters:
+-            label = ttk.Label(self.main_frame, text=f"{character.getName()} Position {character.getPosition()}")
+-            self.player_position_labels.append(label)
+-            label.grid(row=3+len(self.player_position_labels), column=0, columnspan=6, pady=5)
+-
+-    def update_ui(self, round_number, player_names, property_list):
+-        self.round_label.config(text=f"Round {round_number}")
+-        self.player_label.config(text=" ".join(f"P{i+1}:{name}" for i, name in enumerate(player_names)))
+-
+-        self.property_table.delete(*self.property_table.get_children())
+-        for property in property_list:
+-            self.property_table.insert("", "end", values=(property["name"], property["price"], property["rent"], property["owned"]))
+-
+-        for i, label in enumerate(self.player_position_labels):
+-            label.config(text=f"{self.characters[i].getName()} Position {self.characters[i].getPosition()}")
+\ No newline at end of file
+Index: .idea/misc.xml
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+deleted file mode 100644
+--- a/.idea/misc.xml	(revision 20e9637c7f4b455707c957d2fbb39a6c477b8432)
++++ /dev/null	(revision 20e9637c7f4b455707c957d2fbb39a6c477b8432)
+@@ -1,7 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="Black">
+-    <option name="sdkName" value="Python 3.12" />
+-  </component>
+-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.12" project-jdk-type="Python SDK" />
+-</project>
+\ No newline at end of file
+Index: test.py
+===================================================================
+diff --git a/test.py b/test.py
+deleted file mode 100644
+--- a/test.py	(revision 20e9637c7f4b455707c957d2fbb39a6c477b8432)
++++ /dev/null	(revision 20e9637c7f4b455707c957d2fbb39a6c477b8432)
+@@ -1,7 +0,0 @@
+-from gameboard import Gameboard
+-
+-o = Gameboard()
+-o.setup_board()
+-o.printPropertyNamewithOwned(['a','b'])
+-a = o.getProptertyList()
+-print(a[15]['name'])
+\ No newline at end of file
+Index: .idea/modules.xml
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+deleted file mode 100644
+--- a/.idea/modules.xml	(revision 20e9637c7f4b455707c957d2fbb39a6c477b8432)
++++ /dev/null	(revision 20e9637c7f4b455707c957d2fbb39a6c477b8432)
+@@ -1,8 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="ProjectModuleManager">
+-    <modules>
+-      <module fileurl="file://$PROJECT_DIR$/.idea/SE0911_2.iml" filepath="$PROJECT_DIR$/.idea/SE0911_2.iml" />
+-    </modules>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/SE0911_2.iml
+===================================================================
+diff --git a/.idea/SE0911_2.iml b/.idea/SE0911_2.iml
+deleted file mode 100644
+--- a/.idea/SE0911_2.iml	(revision 20e9637c7f4b455707c957d2fbb39a6c477b8432)
++++ /dev/null	(revision 20e9637c7f4b455707c957d2fbb39a6c477b8432)
+@@ -1,10 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<module type="PYTHON_MODULE" version="4">
+-  <component name="NewModuleRootManager">
+-    <content url="file://$MODULE_DIR$">
+-      <excludeFolder url="file://$MODULE_DIR$/.venv" />
+-    </content>
+-    <orderEntry type="jdk" jdkName="Python 3.12" jdkType="Python SDK" />
+-    <orderEntry type="sourceFolder" forTests="false" />
+-  </component>
+-</module>
+\ No newline at end of file
+Index: Game.txt
+===================================================================
+diff --git a/Game.txt b/Game.txt
+deleted file mode 100644
+--- a/Game.txt	(revision 20e9637c7f4b455707c957d2fbb39a6c477b8432)
++++ /dev/null	(revision 20e9637c7f4b455707c957d2fbb39a6c477b8432)
+@@ -1,15 +0,0 @@
+-round x
+-
+-all properties [owned, name] (price, rent 就會在 chracter.character 先會 call)
+-
+-Player x
+-draw (不知道需不需要給延遲，或者press enter to draw)
+-?show dice number
+-
+---> e.g. go position 4
+-Prompt ("Would you like to Buy (B) or Pass (P))
+-Prompt (do you want to pay rent or purchase the {propterty name}
+-
+-如何固定size
+-cmd shown 40*60 columns
+-\n\n\n or os.cls
+\ No newline at end of file
+Index: .idea/workspace.xml
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+deleted file mode 100644
+--- a/.idea/workspace.xml	(revision 20e9637c7f4b455707c957d2fbb39a6c477b8432)
++++ /dev/null	(revision 20e9637c7f4b455707c957d2fbb39a6c477b8432)
+@@ -1,432 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="AutoImportSettings">
+-    <option name="autoReloadType" value="SELECTIVE" />
+-  </component>
+-  <component name="ChangeListManager">
+-    <list default="true" id="0ddb709a-b977-4daf-a7c2-66f1548c07f7" name="Changes" comment="1121 1651 bugs in gameboard">
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/game.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/gameboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/gameboard.py" afterDir="false" />
+-    </list>
+-    <option name="SHOW_DIALOG" value="false" />
+-    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+-    <option name="LAST_RESOLUTION" value="IGNORE" />
+-  </component>
+-  <component name="FileTemplateManagerImpl">
+-    <option name="RECENT_TEMPLATES">
+-      <list>
+-        <option value="Python Unit Test" />
+-        <option value="Python Script" />
+-      </list>
+-    </option>
+-  </component>
+-  <component name="Git.Settings">
+-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+-  </component>
+-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+-  "lastFilter": {
+-    "state": "OPEN",
+-    "assignee": "chinghei1007"
+-  }
+-}]]></component>
+-  <component name="GithubPullRequestsUISettings"><![CDATA[{
+-  "selectedUrlAndAccountId": {
+-    "url": "https://github.com/chinghei1007/SE0911_3",
+-    "accountId": "32e1d974-502d-4713-84ea-8fcc82eba26c"
+-  }
+-}]]></component>
+-  <component name="ProjectColorInfo">{
+-  &quot;associatedIndex&quot;: 5
+-}</component>
+-  <component name="ProjectId" id="2obn7oH8IvVM9CcjNijmpHJTQkf" />
+-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+-    <ConfirmationsSetting value="2" id="Add" />
+-  </component>
+-  <component name="ProjectViewState">
+-    <option name="hideEmptyMiddlePackages" value="true" />
+-    <option name="showLibraryContents" value="true" />
+-  </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "ASKED_ADD_EXTERNAL_FILES": "true",
+-    "Python tests.Python tests for test.MyTestCase.executor": "Run",
+-    "Python tests.Python tests for test.TestFunctions.executor": "Run",
+-    "Python tests.Python tests for test.TestFunctions.test_get_default_path_creates_file.executor": "Run",
+-    "Python tests.Python tests for test.TestFunctions.test_get_default_path_exists.executor": "Run",
+-    "Python tests.Python tests for test.TestFunctions.test_import_gameboard_and_not_set_default.executor": "Run",
+-    "Python tests.Python tests for test.TestFunctions.test_import_gameboard_and_set_default.executor": "Run",
+-    "Python tests.Python tests for test.TestFunctions.test_save_default_path.executor": "Run",
+-    "Python tests.Python tests for testcharacter.Test.executor": "Run",
+-    "Python tests.Python tests for testcharacter.Test.testPositionChange.executor": "Run",
+-    "Python tests.Python tests for testinstructions.TestInstructions.executor": "Run",
+-    "Python tests.Python tests in test.py.executor": "Run",
+-    "Python.Game.executor": "Run",
+-    "Python.character.executor": "Run",
+-    "Python.functions.executor": "Run",
+-    "Python.game.executor": "Run",
+-    "Python.gameboard.executor": "Run",
+-    "Python.instructions.executor": "Run",
+-    "Python.test.executor": "Run",
+-    "Python.testcharacter.executor": "Run",
+-    "Python.testinstructions.executor": "Run",
+-    "Python.ui.executor": "Run",
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "RunOnceActivity.git.unshallow": "true",
+-    "git-widget-placeholder": "master",
+-    "last_opened_file_path": "C:/Temp/SE0911_2",
+-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+-  }
+-}]]></component>
+-  <component name="RunManager" selected="Python tests.Python tests for testinstructions.TestInstructions">
+-    <configuration name="game" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+-      <module name="SE0911_2" />
+-      <option name="ENV_FILES" value="" />
+-      <option name="INTERPRETER_OPTIONS" value="" />
+-      <option name="PARENT_ENVS" value="true" />
+-      <envs>
+-        <env name="PYTHONUNBUFFERED" value="1" />
+-      </envs>
+-      <option name="SDK_HOME" value="" />
+-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+-      <option name="IS_MODULE_SDK" value="true" />
+-      <option name="ADD_CONTENT_ROOTS" value="true" />
+-      <option name="ADD_SOURCE_ROOTS" value="true" />
+-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/game.py" />
+-      <option name="PARAMETERS" value="" />
+-      <option name="SHOW_COMMAND_LINE" value="false" />
+-      <option name="EMULATE_TERMINAL" value="false" />
+-      <option name="MODULE_MODE" value="false" />
+-      <option name="REDIRECT_INPUT" value="false" />
+-      <option name="INPUT_FILE" value="" />
+-      <method v="2" />
+-    </configuration>
+-    <configuration name="instructions" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+-      <module name="SE0911_2" />
+-      <option name="ENV_FILES" value="" />
+-      <option name="INTERPRETER_OPTIONS" value="" />
+-      <option name="PARENT_ENVS" value="true" />
+-      <envs>
+-        <env name="PYTHONUNBUFFERED" value="1" />
+-      </envs>
+-      <option name="SDK_HOME" value="" />
+-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+-      <option name="IS_MODULE_SDK" value="true" />
+-      <option name="ADD_CONTENT_ROOTS" value="true" />
+-      <option name="ADD_SOURCE_ROOTS" value="true" />
+-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/instructions.py" />
+-      <option name="PARAMETERS" value="" />
+-      <option name="SHOW_COMMAND_LINE" value="false" />
+-      <option name="EMULATE_TERMINAL" value="false" />
+-      <option name="MODULE_MODE" value="false" />
+-      <option name="REDIRECT_INPUT" value="false" />
+-      <option name="INPUT_FILE" value="" />
+-      <method v="2" />
+-    </configuration>
+-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+-      <module name="SE0911_2" />
+-      <option name="ENV_FILES" value="" />
+-      <option name="INTERPRETER_OPTIONS" value="" />
+-      <option name="PARENT_ENVS" value="true" />
+-      <envs>
+-        <env name="PYTHONUNBUFFERED" value="1" />
+-      </envs>
+-      <option name="SDK_HOME" value="" />
+-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+-      <option name="IS_MODULE_SDK" value="false" />
+-      <option name="ADD_CONTENT_ROOTS" value="true" />
+-      <option name="ADD_SOURCE_ROOTS" value="true" />
+-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+-      <option name="PARAMETERS" value="" />
+-      <option name="SHOW_COMMAND_LINE" value="false" />
+-      <option name="EMULATE_TERMINAL" value="false" />
+-      <option name="MODULE_MODE" value="false" />
+-      <option name="REDIRECT_INPUT" value="false" />
+-      <option name="INPUT_FILE" value="" />
+-      <method v="2" />
+-    </configuration>
+-    <configuration name="Python tests for testcharacter.Test" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+-      <module name="SE0911_2" />
+-      <option name="ENV_FILES" value="" />
+-      <option name="INTERPRETER_OPTIONS" value="" />
+-      <option name="PARENT_ENVS" value="true" />
+-      <option name="SDK_HOME" value="" />
+-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+-      <option name="IS_MODULE_SDK" value="true" />
+-      <option name="ADD_CONTENT_ROOTS" value="true" />
+-      <option name="ADD_SOURCE_ROOTS" value="true" />
+-      <option name="_new_additionalArguments" value="&quot;&quot;" />
+-      <option name="_new_target" value="&quot;testcharacter.Test&quot;" />
+-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+-      <method v="2" />
+-    </configuration>
+-    <configuration name="Python tests for testinstructions.TestInstructions" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+-      <module name="SE0911_2" />
+-      <option name="ENV_FILES" value="" />
+-      <option name="INTERPRETER_OPTIONS" value="" />
+-      <option name="PARENT_ENVS" value="true" />
+-      <option name="SDK_HOME" value="" />
+-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+-      <option name="IS_MODULE_SDK" value="true" />
+-      <option name="ADD_CONTENT_ROOTS" value="true" />
+-      <option name="ADD_SOURCE_ROOTS" value="true" />
+-      <option name="_new_additionalArguments" value="&quot;&quot;" />
+-      <option name="_new_target" value="&quot;testinstructions.TestInstructions&quot;" />
+-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+-      <method v="2" />
+-    </configuration>
+-    <recent_temporary>
+-      <list>
+-        <item itemvalue="Python tests.Python tests for testinstructions.TestInstructions" />
+-        <item itemvalue="Python tests.Python tests for testcharacter.Test" />
+-        <item itemvalue="Python.game" />
+-        <item itemvalue="Python.instructions" />
+-        <item itemvalue="Python.test" />
+-      </list>
+-    </recent_temporary>
+-  </component>
+-  <component name="SharedIndexes">
+-    <attachedChunks>
+-      <set>
+-        <option value="bundled-python-sdk-fb887030ada0-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.21565.199" />
+-      </set>
+-    </attachedChunks>
+-  </component>
+-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+-  <component name="TaskManager">
+-    <task active="true" id="Default" summary="Default task">
+-      <changelist id="0ddb709a-b977-4daf-a7c2-66f1548c07f7" name="Changes" comment="" />
+-      <created>1731146977241</created>
+-      <option name="number" value="Default" />
+-      <option name="presentableId" value="Default" />
+-      <updated>1731146977241</updated>
+-    </task>
+-    <task id="LOCAL-00001" summary="Documentation added 1110 1736">
+-      <option name="closed" value="true" />
+-      <created>1731231428907</created>
+-      <option name="number" value="00001" />
+-      <option name="presentableId" value="LOCAL-00001" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1731231428907</updated>
+-    </task>
+-    <task id="LOCAL-00002" summary="Documentation added 1110 1804">
+-      <option name="closed" value="true" />
+-      <created>1731233056412</created>
+-      <option name="number" value="00002" />
+-      <option name="presentableId" value="LOCAL-00002" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1731233056412</updated>
+-    </task>
+-    <task id="LOCAL-00003" summary="1111 2005 fixed change position logic">
+-      <option name="closed" value="true" />
+-      <created>1731326774606</created>
+-      <option name="number" value="00003" />
+-      <option name="presentableId" value="LOCAL-00003" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1731326774606</updated>
+-    </task>
+-    <task id="LOCAL-00004" summary="1111 2053 file names changed, main game.py will now run">
+-      <option name="closed" value="true" />
+-      <created>1731329622057</created>
+-      <option name="number" value="00004" />
+-      <option name="presentableId" value="LOCAL-00004" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1731329622057</updated>
+-    </task>
+-    <task id="LOCAL-00005" summary="1117 2034 big changes in code organization, including game, character">
+-      <option name="closed" value="true" />
+-      <created>1731846879306</created>
+-      <option name="number" value="00005" />
+-      <option name="presentableId" value="LOCAL-00005" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1731846879306</updated>
+-    </task>
+-    <task id="LOCAL-00006" summary="1117 2249 game logic is basically finished, please test out bugs">
+-      <option name="closed" value="true" />
+-      <created>1731854998114</created>
+-      <option name="number" value="00006" />
+-      <option name="presentableId" value="LOCAL-00006" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1731854998114</updated>
+-    </task>
+-    <task id="LOCAL-00007" summary="1117 2249 game logic is basically finished, please test out bugs">
+-      <option name="closed" value="true" />
+-      <created>1731855237258</created>
+-      <option name="number" value="00007" />
+-      <option name="presentableId" value="LOCAL-00007" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1731855237258</updated>
+-    </task>
+-    <task id="LOCAL-00008" summary="changed names">
+-      <option name="closed" value="true" />
+-      <created>1731855557929</created>
+-      <option name="number" value="00008" />
+-      <option name="presentableId" value="LOCAL-00008" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1731855557929</updated>
+-    </task>
+-    <task id="LOCAL-00009" summary="changed names">
+-      <option name="closed" value="true" />
+-      <created>1731855578047</created>
+-      <option name="number" value="00009" />
+-      <option name="presentableId" value="LOCAL-00009" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1731855578047</updated>
+-    </task>
+-    <task id="LOCAL-00010" summary="1119 2021 changed character.py gotojail due to logic mistakes, added testcharacter">
+-      <option name="closed" value="true" />
+-      <created>1732018940384</created>
+-      <option name="number" value="00010" />
+-      <option name="presentableId" value="LOCAL-00010" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1732018940384</updated>
+-    </task>
+-    <task id="LOCAL-00011" summary="1119 2033 testinstructions line 33 fixed">
+-      <option name="closed" value="true" />
+-      <created>1732019632113</created>
+-      <option name="number" value="00011" />
+-      <option name="presentableId" value="LOCAL-00011" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1732019632113</updated>
+-    </task>
+-    <task id="LOCAL-00012" summary="1119 2143 importexport now work as intended, developer mode will work">
+-      <option name="closed" value="true" />
+-      <created>1732023815628</created>
+-      <option name="number" value="00012" />
+-      <option name="presentableId" value="LOCAL-00012" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1732023815628</updated>
+-    </task>
+-    <task id="LOCAL-00013" summary="1119 2143 importexport now work as intended, developer mode will work">
+-      <option name="closed" value="true" />
+-      <created>1732023928055</created>
+-      <option name="number" value="00013" />
+-      <option name="presentableId" value="LOCAL-00013" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1732023928055</updated>
+-    </task>
+-    <task id="LOCAL-00014" summary="1119 2200 set default path modified">
+-      <option name="closed" value="true" />
+-      <created>1732024851403</created>
+-      <option name="number" value="00014" />
+-      <option name="presentableId" value="LOCAL-00014" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1732024851403</updated>
+-    </task>
+-    <task id="LOCAL-00015" summary="1120">
+-      <option name="closed" value="true" />
+-      <created>1732111836560</created>
+-      <option name="number" value="00015" />
+-      <option name="presentableId" value="LOCAL-00015" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1732111836560</updated>
+-    </task>
+-    <task id="LOCAL-00016" summary="1121 changed game input. lower().Strip()">
+-      <option name="closed" value="true" />
+-      <created>1732176460359</created>
+-      <option name="number" value="00016" />
+-      <option name="presentableId" value="LOCAL-00016" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1732176460359</updated>
+-    </task>
+-    <task id="LOCAL-00017" summary="1121 changed gamebaord line 298 error">
+-      <option name="closed" value="true" />
+-      <created>1732177392498</created>
+-      <option name="number" value="00017" />
+-      <option name="presentableId" value="LOCAL-00017" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1732177392498</updated>
+-    </task>
+-    <task id="LOCAL-00018" summary="1121 1646 bugs in gameboard">
+-      <option name="closed" value="true" />
+-      <created>1732178825448</created>
+-      <option name="number" value="00018" />
+-      <option name="presentableId" value="LOCAL-00018" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1732178825448</updated>
+-    </task>
+-    <task id="LOCAL-00019" summary="1121 1651 bugs in gameboard">
+-      <option name="closed" value="true" />
+-      <created>1732179114860</created>
+-      <option name="number" value="00019" />
+-      <option name="presentableId" value="LOCAL-00019" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1732179114860</updated>
+-    </task>
+-    <option name="localTasksCounter" value="20" />
+-    <servers />
+-  </component>
+-  <component name="Vcs.Log.Tabs.Properties">
+-    <option name="TAB_STATES">
+-      <map>
+-        <entry key="MAIN">
+-          <value>
+-            <State>
+-              <option name="COLUMN_ID_WIDTH">
+-                <map>
+-                  <entry key="Table.Default.Author.ColumnIdWidth" value="84" />
+-                  <entry key="Table.Default.Date.ColumnIdWidth" value="103" />
+-                  <entry key="Table.Space.CommitStatus.ColumnIdWidth" value="102" />
+-                </map>
+-              </option>
+-              <option name="FILTERS">
+-                <map>
+-                  <entry key="branch">
+-                    <value>
+-                      <list>
+-                        <option value="master" />
+-                      </list>
+-                    </value>
+-                  </entry>
+-                </map>
+-              </option>
+-            </State>
+-          </value>
+-        </entry>
+-      </map>
+-    </option>
+-  </component>
+-  <component name="VcsManagerConfiguration">
+-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+-    <MESSAGE value="Documentation added 1110 1736" />
+-    <MESSAGE value="Documentation added 1110 1804" />
+-    <MESSAGE value="1111 2005 fixed change position logic" />
+-    <MESSAGE value="1111 2053 file names changed, main game.py will now run" />
+-    <MESSAGE value="1117 2034 big changes in code organization, including game, character" />
+-    <MESSAGE value="1117 2249 game logic is basically finished, please test out bugs" />
+-    <MESSAGE value="changed names" />
+-    <MESSAGE value="1119 2021 changed character.py gotojail due to logic mistakes, added testcharacter" />
+-    <MESSAGE value="1119 2033 testinstructions line 33 fixed" />
+-    <MESSAGE value="1119 2143 importexport now work as intended, developer mode will work" />
+-    <MESSAGE value="1119 2200 set default path modified" />
+-    <MESSAGE value="1120" />
+-    <MESSAGE value="1121 changed game input. lower().Strip()" />
+-    <MESSAGE value="1121 changed gamebaord line 298 error" />
+-    <MESSAGE value="1121 1646 bugs in gameboard" />
+-    <MESSAGE value="1121 1651 bugs in gameboard" />
+-    <option name="LAST_COMMIT_MESSAGE" value="1121 1651 bugs in gameboard" />
+-  </component>
+-  <component name="XDebuggerManager">
+-    <breakpoint-manager>
+-      <breakpoints>
+-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+-          <url>file://$PROJECT_DIR$/character.py</url>
+-          <line>100</line>
+-          <option name="timeStamp" value="4" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+-          <url>file://$PROJECT_DIR$/testcharacter.py</url>
+-          <line>27</line>
+-          <option name="timeStamp" value="12" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+-          <url>file://$PROJECT_DIR$/gameboard.py</url>
+-          <line>301</line>
+-          <option name="timeStamp" value="17" />
+-        </line-breakpoint>
+-      </breakpoints>
+-    </breakpoint-manager>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: backup txt/Game.txt
+===================================================================
+diff --git a/backup txt/Game.txt b/backup txt/Game.txt
+deleted file mode 100644
+--- a/backup txt/Game.txt	(revision 20e9637c7f4b455707c957d2fbb39a6c477b8432)
++++ /dev/null	(revision 20e9637c7f4b455707c957d2fbb39a6c477b8432)
+@@ -1,15 +0,0 @@
+-round x
+-
+-all properties [owned, name] (price, rent 就會在 chracter.character 先會 call)
+-
+-Player x
+-draw (不知道需不需要給延遲，或者press enter to draw)
+-?show dice number
+-
+---> e.g. go position 4
+-Prompt ("Would you like to Buy (B) or Pass (P))
+-Prompt (do you want to pay rent or purchase the {propterty name}
+-
+-如何固定size
+-cmd shown 40*60 columns
+-\n\n\n or os.cls
+\ No newline at end of file
+Index: backup property/property.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/backup property/property.txt b/backup property/property.txt
+new file mode 100644
+--- /dev/null	(date 1732191151638)
++++ b/backup property/property.txt	(date 1732191151638)
+@@ -0,0 +1,20 @@
++Go,0,0
++Central,800,90
++Wan Chai,700,65
++Tax,0,0
++Stanley,600,60
++Jail,0,0
++Shek O,400,10
++Mong Kok,500,40
++Chance,0,0
++Tsing Yi,400,15
++Free Parking,0,0
++Shatin,700,75
++Chance,0,0
++Tuen Mun,400,20
++Tai Po,500,25
++GoToJail,0,0
++Sai Kung,400,10
++Yuen Long,400,25
++Chance,0,0
++Tai O,600,25
+\ No newline at end of file
