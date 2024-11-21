@@ -185,7 +185,7 @@ while True:
 
             #print property informations and player posistion
             gameboard.printPropertyNamewithOwned(player_names)
-            print_player_positions_with_balance(user)
+            print_player_positions_with_balance(user) #character
 
             rentandID = [0,-1]
             if not character.IsRetired():
@@ -193,7 +193,7 @@ while True:
                 input("Press Enter to roll the dice")
                 rentandID = draw_then_position_change(character, gameboard)
                 rent, ID = rentandID
-                print(len(user))
+                #print(len(user))
                 if ID > 0:
                     print(f"ID is {ID}")
                     user[ID].coins += rent

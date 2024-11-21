@@ -6,6 +6,7 @@ from instructions import *
 class Gameboard:
     def __init__(self):
         self.defaultpath = functions.getDefaultPath()
+        self.path = self.defaultpath
         self.sqaures = inst.read_to_list(self.defaultpath) #[{name}{price}{rent}]
         #self.sqaures = inst.read_to_list("property.txt")
         if not self.validate_board(self.sqaures):
@@ -15,9 +16,10 @@ class Gameboard:
     def reinitializeBoard(self,path):
         original = self.sqaures
         self.sqaures = inst.read_to_list(path) #[{name}{price}{rent}]
+        self.setup_board()
         #self.sqaures = inst.read_to_list("property.txt")
         if self.validate_board_noTerminate(self.sqaures):
-            self.setup_board()
+            return
         else:
             print("Board invalid, Original Board would be used instead")
             self.sqaures = original
@@ -93,6 +95,7 @@ class Gameboard:
 
     def importGbfromFunc(self,path): #test
         self.sqaures = inst.read_to_list(path)
+        self.path = path
 
     """def exportGameboard(self, listDict):
         while True:
@@ -172,14 +175,14 @@ class Gameboard:
         while True:
             backup = self.sqaures
             print("\nOptions:"
-                  "1. Change property order"
-                  "2. Change property name"
-                  "3. Save and exit")
+                  "\n1. Change property order"
+                  "\n2. Change property name"
+                  "\n3. Save and exit")
             choice = input("Enter your choice (1-3): ")
 
             if choice == "1":
                 print("\nCurrent order:")
-                self.getProptertyList()
+                self.printPropertyName(self.path)
                 try:
                     old_pos = input_number_within_range(1,20)
                     new_pos = input_number_within_range(1,20)
@@ -191,7 +194,7 @@ class Gameboard:
 
             elif choice == "2":
                 print("\nCurrent properties")
-                self.getProptertyList()
+                self.printPropertyName(self.path)
                 try:
                     pos = input_number_within_range(1, 20)
                     newName = input("Enter the new property name: ")
@@ -216,6 +219,7 @@ class Gameboard:
                         else:
                             print("Invalid input. Please try again")
                             continue
+                return
 
 
 
@@ -295,8 +299,8 @@ class Gameboard:
             errors.append(f"Error: The board data must have exactly 20 lines, but found {len(board_data)} lines.")
 
         for i, line in enumerate(board_data, start=1):
-            if len(line) != 3:
-                errors.append(f"Format error: Line {i} must have exactly 4 keys (name, isOwned, price, rent).")
+            if len(line) != 4:
+                errors.append(f"Format error: Line {i} must have exactly 4 keys (name, price, rent, isOwned).")
 
 
             name = line['name']

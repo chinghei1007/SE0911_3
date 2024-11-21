@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0ddb709a-b977-4daf-a7c2-66f1548c07f7" name="Changes" comment="1121 changed gamebaord line 298 error">
+    <list default="true" id="0ddb709a-b977-4daf-a7c2-66f1548c07f7" name="Changes" comment="1121 1651 bugs in gameboard">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/game.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gameboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/gameboard.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +58,9 @@
     "Python tests.Python tests for test.TestFunctions.test_import_gameboard_and_not_set_default.executor": "Run",
     "Python tests.Python tests for test.TestFunctions.test_import_gameboard_and_set_default.executor": "Run",
     "Python tests.Python tests for test.TestFunctions.test_save_default_path.executor": "Run",
+    "Python tests.Python tests for testcharacter.Test.executor": "Run",
     "Python tests.Python tests for testcharacter.Test.testPositionChange.executor": "Run",
+    "Python tests.Python tests for testinstructions.TestInstructions.executor": "Run",
     "Python tests.Python tests in test.py.executor": "Run",
     "Python.Game.executor": "Run",
     "Python.character.executor": "Run",
@@ -78,7 +80,7 @@
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python tests.Python tests for testinstructions.TestInstructions">
     <configuration name="game" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SE0911_2" />
       <option name="ENV_FILES" value="" />
@@ -145,57 +147,43 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="testcharacter" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for testcharacter.Test" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="SE0911_2" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testcharacter.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;testcharacter.Test&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="testinstructions" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for testinstructions.TestInstructions" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="SE0911_2" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testinstructions.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;testinstructions.TestInstructions&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests for testinstructions.TestInstructions" />
+        <item itemvalue="Python tests.Python tests for testcharacter.Test" />
         <item itemvalue="Python.game" />
         <item itemvalue="Python.instructions" />
         <item itemvalue="Python.test" />
-        <item itemvalue="Python.testinstructions" />
-        <item itemvalue="Python.testcharacter" />
       </list>
     </recent_temporary>
   </component>
@@ -351,7 +339,23 @@
       <option name="project" value="LOCAL" />
       <updated>1732177392498</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="1121 1646 bugs in gameboard">
+      <option name="closed" value="true" />
+      <created>1732178825448</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1732178825448</updated>
+    </task>
+    <task id="LOCAL-00019" summary="1121 1651 bugs in gameboard">
+      <option name="closed" value="true" />
+      <created>1732179114860</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1732179114860</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -400,7 +404,9 @@
     <MESSAGE value="1120" />
     <MESSAGE value="1121 changed game input. lower().Strip()" />
     <MESSAGE value="1121 changed gamebaord line 298 error" />
-    <option name="LAST_COMMIT_MESSAGE" value="1121 changed gamebaord line 298 error" />
+    <MESSAGE value="1121 1646 bugs in gameboard" />
+    <MESSAGE value="1121 1651 bugs in gameboard" />
+    <option name="LAST_COMMIT_MESSAGE" value="1121 1651 bugs in gameboard" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -417,7 +423,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/gameboard.py</url>
-          <line>297</line>
+          <line>301</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
